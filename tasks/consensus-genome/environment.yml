@@ -1,0 +1,13 @@
+name: consensus-genome
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bwa
+  - samtools
+  - bcftools
+  - mosdepth
+  - bedtools
+  - seqkit
+  - mummer

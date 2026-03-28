@@ -337,5 +337,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "consensus-genome",
+    "name": "Bacterial Consensus Genome Generation",
+    "description": "This task generates a consensus genome sequence from M. tuberculosis Illumina reads by mapping to a reference, calling variants, and masking low-coverage regions. Paired-end reads and a reference genome are provided.",
+    "task_prompt": "Generate a consensus genome from bacterial sequencing reads by aligning to a reference, calling variants, masking low-coverage regions, and comparing the consensus back to the reference. Reads are in data/, reference in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\nreference_length,4411532\nconsensus_length,4411828\nmasked_bases_n,186284\nmasked_pct,4.22\nmean_coverage,53.61\nlow_coverage_regions,2435\nidentity_to_reference,99.88\naligned_bases,4223731\nsnps_vs_reference,1696</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/consensus-genome/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/consensus-genome/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/consensus-genome/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
