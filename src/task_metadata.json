@@ -561,5 +561,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "ancient-dna",
+    "name": "Ancient DNA Authentication and Damage Assessment",
+    "description": "This task processes degraded sequencing reads to assess DNA authenticity through damage patterns, endogenous content, and coverage metrics. A reference genome is provided.",
+    "task_prompt": "Process degraded DNA sequencing reads to assess authenticity and damage. Report alignment statistics, endogenous content, coverage, and deamination damage patterns at read termini. Reads in data/, reference in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_input_reads,59990\nmapped_reads,59990\nendogenous_pct,100.00\nduplication_rate,0.001934\nreads_after_dedup,59874\nmean_read_length,75.0\nmean_coverage,92.56\ncoverage_breadth_pct,99.98\ndamage_5prime_ct,0\ndamage_3prime_ga,0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/ancient-dna/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/ancient-dna/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/ancient-dna/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

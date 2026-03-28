@@ -1,0 +1,12 @@
+name: ancient-dna
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - adapterremoval
+  - bwa
+  - samtools
+  - picard
+  - damageprofiler
+  - mapdamage2
+  - bedtools
