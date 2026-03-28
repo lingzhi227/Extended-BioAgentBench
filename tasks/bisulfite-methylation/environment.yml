@@ -1,0 +1,9 @@
+name: bisulfite-methylation
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - trim-galore
+  - bismark
+  - samtools
+  - picard

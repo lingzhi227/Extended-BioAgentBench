@@ -509,5 +509,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "bisulfite-methylation",
+    "name": "Bisulfite Sequencing DNA Methylation Analysis",
+    "description": "This task analyzes whole-genome bisulfite sequencing data to quantify DNA methylation at CpG, CHG, and CHH contexts. Paired-end reads and a reference genome are provided.",
+    "task_prompt": "Analyze bisulfite sequencing reads to map DNA methylation levels genome-wide. Report alignment statistics, methylation percentages in CpG/CHG/CHH contexts, and CpG site coverage. Reads are in data/, reference genome in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_read_pairs,20000\naligned_pairs,9890\nmapping_efficiency,49.5\nduplication_rate,0\ncpg_methylation_pct,100.0\nchg_methylation_pct,100.0\nchh_methylation_pct,100.0\ntotal_cpg_sites,6224\nmethylated_cpg_sites,6217</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/bisulfite-methylation/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/bisulfite-methylation/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/bisulfite-methylation/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
