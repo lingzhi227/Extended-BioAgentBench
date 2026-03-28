@@ -1,0 +1,11 @@
+name: rnaseq-isoform
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - star
+  - samtools
+  - stringtie
+  - gffcompare
+  - subread

@@ -535,5 +535,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "rnaseq-isoform",
+    "name": "RNA-seq Isoform Assembly and Quantification",
+    "description": "This task performs RNA-seq isoform-level analysis from paired-end reads aligned to a chr22 reference. Gene expression quantification, transcript assembly, and comparison to reference annotation are required.",
+    "task_prompt": "Align RNA-seq reads to a reference genome, assemble transcripts, quantify gene expression, and compare assembled isoforms to the reference annotation. Reads in data/, genome and gene annotation in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,99999\nuniquely_mapped,95609\nunique_mapping_pct,95.61\nmultimapped_pct,2.46\nsplice_junctions,48\nassembled_transcripts,20588\ngenes_expressed,1188\ntranscript_sensitivity,100.0\ntranscript_precision,99.5\nassigned_read_pairs,12175\ngenes_with_counts,1224</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/rnaseq-isoform/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/rnaseq-isoform/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/rnaseq-isoform/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
