@@ -1,0 +1,14 @@
+name: viral-amplicon
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bowtie2
+  - samtools
+  - ivar
+  - bcftools
+  - pangolin
+  - nextclade
+  - mosdepth
+  - seqkit

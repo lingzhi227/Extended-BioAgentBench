@@ -483,5 +483,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "viral-amplicon",
+    "name": "Viral Amplicon Surveillance Analysis",
+    "description": "This task performs SARS-CoV-2 amplicon sequencing analysis from paired-end reads. A reference genome and primer scheme are provided in the reference/ directory.",
+    "task_prompt": "Analyze viral amplicon sequencing data to call variants, generate a consensus genome, and determine the viral lineage and clade. A reference genome and primer BED file are in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,29906\nmasked_bases,19\nmasked_pct,0.06\nalignment_rate,100.00%\nmapped_reads,100000\nmean_coverage,497.71\ntotal_variants_called,42\npass_variants,42\nlineage,B\nclade,19A</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/viral-amplicon/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/viral-amplicon/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/viral-amplicon/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
