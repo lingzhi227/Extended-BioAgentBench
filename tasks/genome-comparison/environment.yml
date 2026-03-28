@@ -1,0 +1,9 @@
+name: genome-comparison
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - prokka
+  - mummer
+  - panaroo
+  - bedtools

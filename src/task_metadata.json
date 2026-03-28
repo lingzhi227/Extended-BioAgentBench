@@ -264,5 +264,26 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "genome-comparison",
+    "name": "Pairwise Bacterial Genome Comparison",
+    "description": "This task compares two E. coli genomes (K-12 laboratory strain vs CFT073 uropathogenic clinical isolate) to identify SNPs, structural rearrangements, and unique gene content between them.",
+    "task_prompt": "Compare two bacterial genomes to identify sequence differences and gene content variation. Report alignment statistics, SNPs, structural rearrangements, and shared vs unique genes. The two genome assemblies are in the data/ directory. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_a_length,4641652\ngenome_b_length,5231428\naligned_bases,3967944\naverage_identity,97.17\ntotal_snps,106261\ntotal_indels,4611\nbreakpoints,1037\nrelocations,44\ninversions,20\ncds_genome_a,4305\ncds_genome_b,4894\nshared_orthologs,3610\nunique_genes,1927\ntotal_pangenome,5537</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/genome-comparison/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/genome-comparison/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
