@@ -665,5 +665,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "scrna-full-pipeline",
+    "name": "Single-Cell RNA-seq Full Pipeline: Multi-Quantifier Analysis",
+    "description": "This task processes single-cell RNA-seq data from two mouse samples sequenced on the 10x Chromium v2 platform. Paired-end FASTQ files are provided for each sample (R1 = cell barcode + UMI, R2 = cDNA), along with a mouse chromosome 19 reference genome and gene annotation. The goal is to quantify gene expression per cell using multiple approaches, compare them, then perform quality control, doublet detection, batch correction, dimensionality reduction, clustering, marker gene identification, and differential expression between samples. The data is from the nf-core/scrnaseq test dataset.",
+    "task_prompt": "Process two single-cell RNA-seq samples from paired-end FASTQ files. The data/ directory contains subdirectories Sample_X/ and Sample_Y/ with 10x Chromium v2 FASTQ files (R1 has cell barcode + UMI; R2 has cDNA). The reference/ directory contains a mouse chr19 genome FASTA (genome.fa), gene annotation (genes.gtf), and a cell barcode whitelist (10xv2_whitelist.txt). Quantify gene expression per cell using at least two independent methods, compare the cell counts from each. Then merge samples, filter empty droplets and low-quality cells, detect and remove doublets, normalize, find highly variable genes, reduce dimensions, correct for batch effects between the two samples, cluster cells, find marker genes per cluster, and test for differentially expressed genes between the two samples. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntotal_input_reads,225000\nnum_samples,2\ncells_before_filtering,8678\ncells_after_filtering,2914\ngenes_detected,267\nmedian_genes_per_cell,2\nmedian_counts_per_cell,2\npct_mitochondrial_median,0.0\ndoublet_fraction,0.0055\nnum_hvg,107\nnum_pcs_used,20\npca_variance_ratio_pc1,0.0357\nnum_clusters,12\ncluster_0_size,1323\ncluster_0_marker,Malat1\ncluster_1_size,1169\ncluster_1_marker,Malat1\ndominant_cell_type,unassigned\nde_genes_between_samples,0\ntop_de_gene,Gm32256\nquantifier_a_cells,8678\nquantifier_b_cells,10207</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/scrna-full-pipeline/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/scrna-full-pipeline/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/scrna-full-pipeline/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

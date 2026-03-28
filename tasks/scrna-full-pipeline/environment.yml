@@ -1,0 +1,26 @@
+name: scrna-full-pipeline
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - star=2.7.11b
+  - salmon=1.10.3
+  - kallisto=0.50.1
+  - bustools=0.43.2
+  - samtools=1.21
+  - fastqc=0.12.1
+  - multiqc=1.25.2
+  - scanpy=1.10.4
+  - scrublet=0.2.3
+  - leidenalg=0.10.2
+  - celltypist=1.6.3
+  - harmonypy=0.0.10
+  - anndata=0.11.1
+  - pandas
+  - matplotlib
+  - scipy
+  - numpy
+  - seaborn
+  - scikit-misc
