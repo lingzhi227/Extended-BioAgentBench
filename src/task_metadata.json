@@ -613,5 +613,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "gcms-metabolomics",
+    "name": "GC-MS Metabolomics Profiling: Brown Algae Salinity Adaptation",
+    "description": "This task analyzes GC-MS metabolomics data from Ectocarpus brown algae adapted to different salinity conditions (seawater, 5% NaCl freshwater, 100% NaCl freshwater). Six mzML files from low-resolution GC-MS are provided along with sample metadata, a spectral reference library (8 standard compounds), and alkane retention time standards for Kovats retention index calculation. The data is from Dittami et al. 2012 (Zenodo 16538501). The goal is to perform untargeted metabolomics profiling: peak detection, retention time alignment, feature grouping, spectral deconvolution into pseudospectra, retention index computation, and compound identification via spectral library matching.",
+    "task_prompt": "Profile metabolites from GC-MS data of brown algae (Ectocarpus) samples grown under different salinity conditions. Six mzML files are provided in data/ along with a sample metadata file, a spectral reference library, and alkane retention time standards in reference/. Detect chromatographic peaks across all samples, align retention times, group corresponding features, fill missing values, annotate isotope patterns and adduct groups, compute Kovats retention indices from the alkane standards, and identify metabolites by matching against the provided spectral library. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\ntotal_peaks_detected,9492\nfeatures_before_alignment,1325\nfeatures_after_alignment,1333\nsamples_processed,6\nfill_rate_percent,100\npseudospectra_count,124\nisotope_annotations,200\nadduct_annotations,576\nretention_index_range,992-2700\nmean_retention_index,1917.5\nlibrary_spectra_count,8\ncompounds_matched,15\nunique_compounds_identified,8\nmean_match_score,0.733\nidentified_compounds,\"Alanine, 3TMS;Aspartic acid, 2TMS;Citric acid, 4TMS;D-Mannitol, 6TMS;Glycine, 3TMS;Pyroglutamic acid, 2TMS;Ribitol, 5TMS;Tryptamine, 2TMS\"\nmean_sample_correlation,0.567\nmean_feature_cv_percent,71.8</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/gcms-metabolomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/gcms-metabolomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/gcms-metabolomics/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
