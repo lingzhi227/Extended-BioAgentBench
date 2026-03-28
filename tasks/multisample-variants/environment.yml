@@ -1,0 +1,10 @@
+name: multisample-variants
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bwa
+  - samtools
+  - freebayes
+  - bcftools

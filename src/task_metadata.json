@@ -311,5 +311,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "multisample-variants",
+    "name": "Multi-sample Variant Calling and Comparison",
+    "description": "This task calls variants in two closely related M. tuberculosis clinical isolates and compares them to identify shared and sample-specific mutations. Paired-end reads for two samples and a reference genome are provided.",
+    "task_prompt": "Call variants in two bacterial isolates relative to a reference genome, then compare to identify shared and unique mutations. Paired-end reads for sampleA and sampleB are in the data/ directory, reference in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_variants_sampleA,1475\ntotal_variants_sampleB,1593\nsnps_sampleA,1220\nsnps_sampleB,1291\nunique_to_sampleA,423\nunique_to_sampleB,541\nshared_variants,1052</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/multisample-variants/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/multisample-variants/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/multisample-variants/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
