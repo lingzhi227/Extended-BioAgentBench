@@ -691,5 +691,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "crispr-screen",
+    "name": "CRISPR Screen Analysis: Drug Sensitivity Gene Discovery",
+    "description": "This task analyzes a pooled CRISPR knockout screen to identify genes that confer sensitivity to a cancer drug. Three FASTQ files represent different conditions of a Brunello sgRNA library screen: baseline (day 0), drug-treated (day 8), and vehicle control (day 8). A tab-separated guide library file maps 77,441 sgRNAs to ~19,000 human genes. The goal is to count sgRNA representation across conditions, apply multiple statistical methods to rank gene-level essentiality, compare drug-treated vs vehicle to identify drug-specific hits, and produce a comprehensive screen quality and hit report.",
+    "task_prompt": "Analyze a pooled CRISPR knockout screen from three conditions (baseline T0, drug-treated T8, vehicle control T8) to identify genes whose knockout confers drug sensitivity. A guide RNA library file is provided in reference/library.tsv (tab-separated: sgRNA_name, sequence, gene). Three FASTQ files in data/ contain sequencing reads from each condition. Reads contain vector backbone flanking the 20bp guide sequence. Count guide representation across all conditions, then apply at least two independent statistical methods to rank genes by depletion significance. Compare drug-treated results against vehicle control to distinguish drug-specific effects from general essentiality. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\ntotal_counts_t0,172264\nzero_count_sgrnas_t0,16800\ngini_index_t0,0.495\nmedian_count_t0,2\ntotal_counts_drug,146594\nzero_count_sgrnas_drug,23444\ngini_index_drug,0.5575\nmedian_count_drug,1\ntotal_counts_vehicle,149774\nzero_count_sgrnas_vehicle,22403\ngini_index_vehicle,0.5466\nmedian_count_vehicle,1\ntotal_sgrnas,77441\nmapped_reads_t0,172264\nmapping_pct_t0,0.8201\nmapped_reads_drug,146594\nmapping_pct_drug,0.8125\nmapped_reads_vehicle,149774\nmapping_pct_vehicle,0.8238\ntop_depleted_gene_rra,MGME1\ntop_depleted_fdr_rra,0.506188\ntop_depleted_lfc_rra,-0.48677\ntop_enriched_gene_rra,SNTB1\ntop_enriched_fdr_rra,0.670792\nnum_depleted_genes_fdr25_rra,0\nnum_enriched_genes_fdr25_rra,0\ntop_gene_mle,SNTB1\ntop_gene_mle_fdr,0\ntop_gene_mle_beta,1.7188\nnum_significant_mle_fdr25,1\nnum_depleted_genes_vehicle_fdr25,0\nhigh_confidence_hits,0\nmoderate_confidence_hits,1\ndrug_specific_depleted_genes,0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/crispr-screen/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/crispr-screen/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/crispr-screen/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
