@@ -639,5 +639,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "cutandrun",
+    "name": "CUT&RUN Epigenomic Profiling",
+    "description": "This task analyzes CUT&RUN sequencing data to identify histone modification peaks. Paired-end reads, a chr22 reference genome, and blacklist regions are provided.",
+    "task_prompt": "Identify histone modification enrichment peaks from CUT&RUN sequencing data using two independent peak calling approaches, then compute a consensus peak set. A reference genome and blacklist are in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,33914\nmapped_reads,33914\nmapping_rate,100.00\nduplication_rate,0.046353\npeaks_caller_a,198\npeaks_caller_b,38\nconsensus_peaks,64\nfraction_reads_in_peaks,0.0238</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/cutandrun/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/cutandrun/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/cutandrun/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

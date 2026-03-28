@@ -1,0 +1,14 @@
+name: cutandrun
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bowtie2
+  - samtools
+  - picard
+  - seacr
+  - macs3
+  - bedtools
+  - deeptools
+  - multiqc
