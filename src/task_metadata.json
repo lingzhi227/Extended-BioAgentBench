@@ -243,7 +243,7 @@
     "task_id": "phage-characterization",
     "name": "Bacteriophage Genome Assembly and Functional Characterization",
     "description": "This task assembles and characterizes a bacteriophage genome from paired-end Illumina sequencing data. The data contains reads from a known temperate phage. A reference genome is provided in the reference/ directory for comparison.",
-    "task_prompt": "Assemble a bacteriophage genome from paired-end Illumina reads and produce a comprehensive functional characterization including genome quality assessment, gene annotation with functional categories (lysis, lysogeny, replication, structural), and taxonomic classification. A reference genome is provided in the reference/ directory. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,48489\nnum_contigs,1\ngc_content,49.86\nclosest_hit,Escherichia phage Lambda\ncds_count,94\ntrna_count,0\nlysis_genes,3\nlysogeny_genes,3\nreplication_genes,1\nstructural_genes,21\nquality_tier,High-quality\ngenome_completeness,100.0\nvirulence_factors,0</example>",
+    "task_prompt": "Assemble a bacteriophage genome from paired-end Illumina reads and produce a comprehensive functional characterization including genome quality assessment, gene annotation with functional categories (lysis, lysogeny, replication, structural), and taxonomic classification. A reference genome is provided in the reference/ directory. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,174257\nnum_contigs,5\ngc_content,35.60\nclosest_hit,Enterobacteria phage RB59\ncds_count,305\ntrna_count,0\nlysis_genes,8\nlysogeny_genes,1\nreplication_genes,14\nstructural_genes,48\ncheckv_quality,Complete\ncheckv_completeness,100.0\nvirulence_factors,0\n</example>",
     "download_urls": {
       "data": [
         {
@@ -488,7 +488,7 @@
     "task_id": "viral-amplicon",
     "name": "Viral Amplicon Surveillance Analysis",
     "description": "This task performs SARS-CoV-2 amplicon sequencing analysis from paired-end reads. A reference genome and primer scheme are provided in the reference/ directory.",
-    "task_prompt": "Analyze viral amplicon sequencing data to call variants, generate a consensus genome, and determine the viral lineage and clade. A reference genome and primer BED file are in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,29906\nmasked_bases,19\nmasked_pct,0.06\nalignment_rate,100.00%\nmapped_reads,100000\nmean_coverage,497.71\ntotal_variants_called,42\npass_variants,42\nlineage,B\nclade,19A</example>",
+    "task_prompt": "Analyze viral amplicon sequencing data to call variants, generate a consensus genome, and determine the viral lineage and clade. A reference genome and primer BED file are in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,29906\nmasked_bases,82\nmasked_pct,0.27\nalignment_rate,97.04%\nmapped_reads,975406\nmean_coverage,4699.34\ntotal_variants_called,31\npass_variants,4\nlineage,Unassigned\n</example>",
     "download_urls": {
       "data": [
         {
@@ -540,7 +540,7 @@
     "task_id": "rnaseq-isoform",
     "name": "RNA-seq Isoform Assembly and Quantification",
     "description": "This task performs RNA-seq isoform-level analysis from paired-end reads aligned to a chr22 reference. Gene expression quantification, transcript assembly, and comparison to reference annotation are required.",
-    "task_prompt": "Align RNA-seq reads to a reference genome, assemble transcripts, quantify gene expression, and compare assembled isoforms to the reference annotation. Reads in data/, genome and gene annotation in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,99999\nuniquely_mapped,95609\nunique_mapping_pct,95.61\nmultimapped_pct,2.46\nsplice_junctions,48\nassembled_transcripts,20588\ngenes_expressed,1188\ntranscript_sensitivity,100.0\ntranscript_precision,99.5\nassigned_read_pairs,12175\ngenes_with_counts,1224</example>",
+    "task_prompt": "Align RNA-seq reads to a reference genome, assemble transcripts, quantify gene expression, and compare assembled isoforms to the reference annotation. Reads in data/, genome and gene annotation in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,47605\nuniquely_mapped,15633\nunique_mapping_pct,32.84\nmultimapped_pct,23.29\nsplice_junctions,1271\nassembled_transcripts,14035\ngenes_expressed,130\ntranscript_sensitivity,95.9\ntranscript_precision,100.0\nassigned_read_pairs,10566\ngenes_with_counts,186\n</example>",
     "download_urls": {
       "data": [
         {
@@ -566,7 +566,7 @@
     "task_id": "ancient-dna",
     "name": "Ancient DNA Authentication and Damage Assessment",
     "description": "This task processes degraded sequencing reads to assess DNA authenticity through damage patterns, endogenous content, and coverage metrics. A reference genome is provided.",
-    "task_prompt": "Process degraded DNA sequencing reads to assess authenticity and damage. Report alignment statistics, endogenous content, coverage, and deamination damage patterns at read termini. Reads in data/, reference in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_input_reads,59990\nmapped_reads,59990\nendogenous_pct,100.00\nduplication_rate,0.001934\nreads_after_dedup,59874\nmean_read_length,75.0\nmean_coverage,92.56\ncoverage_breadth_pct,99.98\ndamage_5prime_ct,0\ndamage_3prime_ga,0</example>",
+    "task_prompt": "Process degraded DNA sequencing reads to assess authenticity and damage. Report alignment statistics, endogenous content, coverage, and deamination damage patterns at read termini. Reads in data/, reference in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_input_reads,2296\nmapped_reads,2296\nendogenous_pct,100.00\nduplication_rate,0.023529\nreads_after_dedup,2242\nmean_read_length,80.2\nmean_coverage,10.71\ncoverage_breadth_pct,96.73\ndamage_5prime_ct,0\ndamage_3prime_ga,0\n</example>",
     "download_urls": {
       "data": [
         {
