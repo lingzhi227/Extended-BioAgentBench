@@ -1,0 +1,15 @@
+name: atacseq-accessibility
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - trim-galore
+  - bowtie2
+  - samtools
+  - picard
+  - bedtools
+  - deeptools
+  - macs3
+  - homer
+  - subread
+  - multiqc

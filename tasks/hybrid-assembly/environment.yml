@@ -1,0 +1,16 @@
+name: hybrid-assembly
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - nanoplot
+  - filtlong
+  - unicycler
+  - bwa
+  - polypolish
+  - quast
+  - busco
+  - prokka
+  - mlst
+  - abricate

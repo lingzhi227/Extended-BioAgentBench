@@ -1,0 +1,13 @@
+name: chipseq-peak-calling
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - fastqc
+  - trimmomatic
+  - bwa
+  - samtools
+  - macs2
+  - bedtools
+  - deeptools

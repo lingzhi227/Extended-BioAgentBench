@@ -1,0 +1,12 @@
+name: pangenome-evolution
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - prokka
+  - panaroo
+  - mlst
+  - abricate
+  - snp-sites
+  - iqtree
+  - mafft

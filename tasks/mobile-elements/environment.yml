@@ -1,0 +1,10 @@
+name: mobile-elements
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - micromamba
+  - wget
+  - tar
+  - pip

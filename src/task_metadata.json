@@ -1,0 +1,242 @@
+[
+  {
+    "task_id": "chipseq-peak-calling",
+    "name": "ChIP-seq Peak Calling: TAL1 Binding Site Comparison",
+    "description": "This task analyzes ChIP-seq data for the TAL1 transcription factor in two mouse hematopoietic cell types: G1E erythroid progenitor cells and megakaryocytes. Eight single-end FASTQ files (4 TAL1 ChIP samples + 4 input controls, all subset to chromosome 19) are provided along with a mm10 chr19 reference genome. The data is from Wu et al. 2014 (GEO GSE51338).",
+    "task_prompt": "Identify TAL1 transcription factor binding sites in G1E cells and Megakaryocytes from ChIP-seq data, then compare peaks between cell types to find shared and cell-type-specific binding. A mm10 chr19 reference genome is provided in the reference/ directory. The output should be a CSV file with the following columns: 'chrom','start','end','name','score','strand','signal_value','pvalue','qvalue','peak','cell_type','status'.\n<example>chrom,start,end,name,score,strand,signal_value,pvalue,qvalue,peak,cell_type,status\nchr19,5798729,5798998,G1E_TAL1_peak_12,885,.,17.5082,91.8514,88.5255,277,G1E,shared</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/chipseq-peak-calling/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/chipseq-peak-calling/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/chipseq-peak-calling/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "bacterial-assembly",
+    "name": "Bacterial Genome Assembly and Annotation: MRSA Characterization",
+    "description": "This task analyzes a methicillin-resistant Staphylococcus aureus (MRSA) clinical isolate from paired-end Illumina MiSeq sequencing. The goal is to assemble the genome de novo and produce a comprehensive characterization report covering assembly quality, gene content, sequence typing, and antimicrobial resistance. The data is from Hikichi et al. 2019 (BioSample SAMD00180470), estimated genome size ~2.9 Mbp.",
+    "task_prompt": "Assemble and characterize an MRSA bacterial genome from paired-end Illumina reads. Report assembly quality, completeness, sequence type, gene content, and antimicrobial resistance. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_length,2911349\nnum_contigs,44\nn50,276459\ngc_content,32.77\nlargest_contig,589438\ncompleteness,C:100.0%[S:100.0%,D:0.0%],F:0.0%,M:0.0%,n:124\nmlst_scheme,saureus\nmlst_sequence_type,764\ncds_count,2717\ntrna_count,57\nrrna_count,9</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/bacterial-assembly/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/bacterial-assembly/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "mobile-elements",
+    "name": "Bacterial Mobile Genetic Element Characterization: MRSA Genomic Islands and AMR",
+    "description": "This task analyzes a methicillin-resistant Staphylococcus aureus (MRSA) clinical isolate from paired-end Illumina MiSeq sequencing. The goal is to assemble the genome and perform comprehensive characterization of mobile genetic elements, antimicrobial resistance determinants, and virulence factors. The report should cover assembly quality, gene content, insertion sequence elements, AMR genes identified by multiple methods, and virulence factors. The data is from Hikichi et al. 2019 (BioSample SAMD00180470), S. aureus estimated genome ~2.9 Mbp.",
+    "task_prompt": "Assemble an MRSA genome from paired-end Illumina reads and characterize its mobile genetic elements, antimicrobial resistance determinants, and virulence factors. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_length,2911349\nnum_contigs,44\nn50,276459\ngc_content,32.77\nlargest_contig,589438\ncompleteness,C:100.0%[S:100.0%,D:0.0%],F:0.0%,M:0.0%,n:124\ncds_count,2717\ntrna_count,57\nrrna_count,9\nis_elements_found,0\nintegrons_found,0\namr_genes_protein_method,45\namr_genes_nucleotide_method,21\namr_genes_confirmed_both,2\nvirulence_factors,83\nplasmid_contigs,0\nreplicon_types,0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mobile-elements/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mobile-elements/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "outbreak-investigation",
+    "name": "Foodborne Pathogen Outbreak Investigation via WGS Phylogenomics",
+    "description": "This task analyzes whole-genome sequencing data from three Mycobacterium tuberculosis clinical isolates to determine outbreak clustering. The workflow combines reference-based SNP calling with de novo assembly, producing both SNP-based and core-gene phylogenies, pairwise SNP distance matrices, sequence typing, antimicrobial resistance profiling, and pan-genome analysis. The data consists of paired-end Illumina reads from three TB isolates and the M. tuberculosis H37Rv reference genome.",
+    "task_prompt": "Determine outbreak relatedness among three M. tuberculosis isolates using whole-genome sequencing data. A reference genome is provided in the reference/ directory. The output should include: outbreak_report.csv (metric,value format), assembly_stats.csv, mlst_results.csv, amr_summary.csv, snp_distance_matrix.tsv, snp_phylogeny.nwk, and gene_phylogeny.nwk.\n<example>metric,value\nnum_isolates,3\nreference_genome,M. tuberculosis H37Rv\nsnp_alignment_length,2703\ncompleteness,C:97.6%[S:96.0%,D:1.6%],F:1.6%,M:0.8%,n:124\npangenome_core_genes,3867\npangenome_total_genes,4066\nsnp_tree_available,yes\ngene_tree_available,yes</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/outbreak-investigation/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/outbreak-investigation/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/outbreak-investigation/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "atacseq-accessibility",
+    "name": "ATAC-seq Chromatin Accessibility Profiling",
+    "description": "This task analyzes ATAC-seq data from GM12878 cells to identify open chromatin regions and characterize transcription factor binding motifs. Paired-end reads enriched for chr22 are provided along with the hg38 chr22 reference, ENCODE blacklist regions, and gene annotations. The data is from Buenrostro et al. 2013 (SRR891268).",
+    "task_prompt": "Profile chromatin accessibility in GM12878 cells from ATAC-seq data. Identify open chromatin regions and characterize transcription factor binding motifs. A chr22 reference genome, blacklist regions, and gene annotations are provided in the reference/ directory. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\nsample,SRR891268\ntotal_reads,138630\nalignment_rate,32.33%\nmapped_reads,150244\nduplication_rate,0.048854\nchrM_reads,0\nnum_peaks,110\nfrip,0.0153\nknown_motifs_enriched,59</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/atacseq-accessibility/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/atacseq-accessibility/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/atacseq-accessibility/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "longread-assembly",
+    "name": "Nanopore Long-read Bacterial Genome Assembly",
+    "description": "This task assembles and characterizes a Salmonella enterica genome from Oxford Nanopore long-read sequencing data. A reference genome is provided for quality assessment. The data is from a Nanopore MinION run.",
+    "task_prompt": "Assemble a Salmonella enterica genome from Nanopore long reads. Assess read quality, assemble, polish, and characterize the resulting genome. A reference genome is provided in the reference/ directory. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\nnum_reads,114986.0\nmean_read_length,938.8\nmean_read_quality,11.3\ntotal_bases,107951527.0\nassembly_length,8456926\nnum_contigs,170\nn50,123189\ngc_content,51.88\nlargest_contig,418268\ngenome_fraction,90.728\nmisassemblies,7\ncompleteness,C:42.7%[S:38.7%,D:4.0%],F:41.9%,M:15.3%,n:124\ncds_count,16755\ntrna_count,116\nrrna_count,14\namr_genes,56</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/longread-assembly/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/longread-assembly/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/longread-assembly/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "hybrid-assembly",
+    "name": "Hybrid Genome Assembly from Illumina and Nanopore Data",
+    "description": "This task performs hybrid genome assembly combining Illumina short reads and Oxford Nanopore long reads from a Bacillus subtilis isolate. A reference genome is provided. Both paired-end Illumina FASTQ and Nanopore FASTQ files are in the data/ directory.",
+    "task_prompt": "Assemble a bacterial genome using both Illumina paired-end reads and Nanopore long reads. Polish the assembly and characterize it. A reference genome is in the reference/ directory. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\nassembly_length,3989415\nnum_contigs,39\nn50,984413\ngc_content,43.81\nlargest_contig,1072107\ngenome_fraction,98.519\ncircular_contigs,0\ncompleteness,C:100.0%[S:100.0%,D:0.0%],F:0.0%,M:0.0%,n:124\nmlst_scheme,bsubtilis\nmlst_sequence_type,7\ncds_count,3975\ntrna_count,37\nrrna_count,2\namr_genes,9</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/hybrid-assembly/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/hybrid-assembly/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/hybrid-assembly/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "sv-detection",
+    "name": "Bacterial Structural Variant and SNP Detection",
+    "description": "This task detects structural variants (deletions, duplications, inversions) and SNPs/indels in an MRSA genome from Illumina paired-end reads aligned to an assembled reference. The reference assembly is in the reference/ directory.",
+    "task_prompt": "Detect structural variants and small variants (SNPs, indels) in an MRSA genome from paired-end Illumina reads. A reference assembly is provided in the reference/ directory. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,911977\nmapped_reads,840453\nsnps,33870\nindels,650\nstructural_variants,331\nsv_deletions,136\nsv_duplications,81\nsv_inversions,110\nsv_breakends,0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/sv-detection/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/sv-detection/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/sv-detection/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "pangenome-evolution",
+    "name": "E. coli Pan-genome and Core Phylogeny",
+    "description": "This task performs pan-genome analysis of five Escherichia coli strains (K-12, O157:H7, CFT073, UTI89, APEC O1) to identify core, shell, and cloud genes, reconstruct core-gene phylogeny, and profile AMR and sequence types across strains.",
+    "task_prompt": "Analyze five E. coli genome assemblies to characterize the pan-genome, reconstruct a core-gene phylogeny, and profile antimicrobial resistance and sequence types. Genome assemblies are in the data/ directory. The output should include pangenome_report.csv (metric,value format), mlst_all.csv, amr_summary.csv, and core_phylogeny.nwk.\n<example>metric,value\nnum_genomes,5\ncore_genes,3432\nshell_genes,4269\ncloud_genes,0\ntotal_genes,7701\ntree_available,yes</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/pangenome-evolution/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/pangenome-evolution/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "metagenomic-profiling",
+    "name": "Metagenomic Assembly and Functional Profiling",
+    "description": "This task performs metagenomic analysis of paired-end sequencing data to assemble contigs, predict genes, detect antimicrobial resistance, and profile taxonomic composition.",
+    "task_prompt": "Analyze paired-end metagenomic sequencing reads. Assemble contigs, predict genes, classify taxonomy, and detect antimicrobial resistance genes. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\nassembly_length,2903797\nnum_contigs,98\nn50,58516\npredicted_genes,2828\nspecies_detected,84\namr_genes,20</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/metagenomic-profiling/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/metagenomic-profiling/results.tar.gz"
+        }
+      ]
+    }
+  }
+]

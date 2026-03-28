@@ -1,0 +1,15 @@
+name: longread-assembly
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - nanoplot
+  - filtlong
+  - flye
+  - medaka
+  - minimap2
+  - samtools
+  - quast
+  - busco
+  - prokka
+  - abricate

@@ -1,0 +1,13 @@
+name: bacterial-assembly
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - fastp
+  - shovill
+  - quast
+  - prokka
+  - abricate
+  - mlst
+  - busco

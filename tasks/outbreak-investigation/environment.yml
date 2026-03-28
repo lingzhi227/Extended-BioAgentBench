@@ -1,0 +1,19 @@
+name: outbreak-investigation
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - snippy=4.6.0
+  - shovill
+  - prokka
+  - mlst
+  - abricate
+  - ncbi-amrfinderplus
+  - quast
+  - busco
+  - gubbins
+  - snp-sites
+  - iqtree
+  - snp-dists
+  - panaroo

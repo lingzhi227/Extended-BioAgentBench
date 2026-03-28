@@ -1,0 +1,12 @@
+name: metagenomic-profiling
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - megahit
+  - kraken2
+  - bracken
+  - prodigal
+  - quast
+  - abricate

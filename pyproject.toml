@@ -1,0 +1,10 @@
+[project]
+name = "extended-bio-agent-benchmark"
+version = "0.1.0"
+description = "Extended tasks for benchmarking agentic LLMs in bioinformatics"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1.7",
+    "requests>=2.32.4",
+]
