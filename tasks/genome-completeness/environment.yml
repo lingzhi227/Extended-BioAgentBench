@@ -1,0 +1,9 @@
+name: genome-completeness
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - busco
+  - quast
+  - prokka
+  - seqkit

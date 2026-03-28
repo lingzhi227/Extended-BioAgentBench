@@ -1,0 +1,8 @@
+name: species-identification
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - mlst
+  - mummer
+  - seqkit

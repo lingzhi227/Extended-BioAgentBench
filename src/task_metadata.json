@@ -431,5 +431,57 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "genome-completeness",
+    "name": "Genome Completeness and Quality Assessment",
+    "description": "This task assesses the completeness and quality of a fragmented bacterial genome assembly using multiple metrics. A reference genome is provided for comparison.",
+    "task_prompt": "Assess the completeness and quality of a bacterial genome assembly using reference alignment, single-copy orthologs, and gene content analysis. The assembly is in data/, reference in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_length,8497890\nnum_contigs,170\nn50,123948\ngc_content,52.11\nlargest_contig,420634\ngenome_fraction,91.066\nmisassemblies,9\nduplication_ratio,1.038\ncompleteness_pct,37.9\nfragmented_pct,48.4\nmissing_pct,13.7\ncds_count,16767\ntrna_count,115\nrrna_count,14\ncoding_density_pct,72.9\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/genome-completeness/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/genome-completeness/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/genome-completeness/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "species-identification",
+    "name": "Multi-reference Bacterial Species Identification",
+    "description": "This task identifies an unknown bacterial isolate by comparing its genome against three reference genomes from different species (E. coli, Salmonella, S. aureus).",
+    "task_prompt": "Identify an unknown bacterial genome by comparing it against multiple reference genomes from different species. Report alignment identity and coverage to each reference, and determine the best match. The unknown genome is in data/, references in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,5179971\nnum_contigs,2\ngc_content,50.61\ntyping_scheme,ecoli_achtman_4\nsequence_type,95\nidentity_to_ecoli,97.15\naligned_to_ecoli_pct,85.93\nidentity_to_salmonella,84.76\naligned_to_salmonella_pct,35.77\nidentity_to_saureus,0.00\naligned_to_saureus_pct,0.00\nbest_match_species,Escherichia coli\nbest_match_identity,97.15\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/species-identification/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/species-identification/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/species-identification/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
