@@ -410,5 +410,26 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "plasmid-typing",
+    "name": "Plasmid Detection and Replicon Typing",
+    "description": "This task identifies plasmid sequences in an E. coli O157:H7 genome assembly, classifies replicon types, and profiles plasmid-borne antimicrobial resistance and virulence factors.",
+    "task_prompt": "Identify plasmid sequences in a bacterial genome assembly, classify their replicon types, and determine which antimicrobial resistance and virulence genes are plasmid-borne vs chromosomal. The genome assembly is in data/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,5594605\ntotal_contigs,3\nplasmid_clusters,2\nplasmid_total_length,96027\nchromosome_contigs,1\nreplicon_types_detected,2\namr_genes_genome,43\namr_genes_plasmid,0\nvirulence_factors_plasmid,7</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/plasmid-typing/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/plasmid-typing/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

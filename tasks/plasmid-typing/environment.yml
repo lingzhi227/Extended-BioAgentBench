@@ -1,0 +1,8 @@
+name: plasmid-typing
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - abricate
+  - seqkit
+  - biopython
