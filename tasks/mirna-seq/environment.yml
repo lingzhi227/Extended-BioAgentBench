@@ -1,0 +1,12 @@
+name: mirna-seq
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bowtie
+  - samtools
+  - mirtop
+  - mirdeep2
+  - mirtrace
+  - multiqc

@@ -587,5 +587,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "mirna-seq",
+    "name": "Small RNA-seq miRNA Discovery and Quantification",
+    "description": "This task analyzes small RNA sequencing data from human placenta to identify and quantify microRNAs. Single-end reads and miRNA reference databases are provided.",
+    "task_prompt": "Identify and quantify microRNAs from small RNA sequencing data. Trim adapters, align to miRNA references, count unique miRNAs, and identify the most abundant species. Reads in data/, miRNA references in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,500000\npassed_filter,238018\nmature_mapped_reads,154932\nhairpin_mapped_reads,183608\nunique_mirnas_detected,394\ntop_mirna,hsa-miR-10a-5p\ntop_mirna_count,41120</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mirna-seq/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mirna-seq/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mirna-seq/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
