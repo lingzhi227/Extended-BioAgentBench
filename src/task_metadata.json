@@ -285,5 +285,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "mapping-qc",
+    "name": "Genome Mapping and Coverage Quality Assessment",
+    "description": "This task assesses the quality of whole-genome sequencing read alignment to a bacterial reference genome. Paired-end reads and a reference genome are provided.",
+    "task_prompt": "Align paired-end bacterial WGS reads to the provided reference genome and produce a comprehensive mapping quality report including alignment statistics, coverage metrics, and base quality. The reference genome is in the reference/ directory. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,903562\nmapped_reads,832038\nmapping_rate,92.16\nproperly_paired_rate,90.06\naverage_base_quality,34.1\naverage_insert_size,372.0\nerror_rate,2.579704e-02\nmean_coverage,45.96\nmin_coverage,0\nmax_coverage,824\ncoverage_breadth_pct,93.6867</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mapping-qc/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mapping-qc/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mapping-qc/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

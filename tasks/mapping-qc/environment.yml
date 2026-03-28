@@ -1,0 +1,11 @@
+name: mapping-qc
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bwa
+  - samtools
+  - mosdepth
+  - bedtools
+  - deeptools
