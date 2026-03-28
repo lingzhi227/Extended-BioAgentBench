@@ -1,0 +1,8 @@
+name: gene-prediction
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - prodigal
+  - prokka
+  - bedtools

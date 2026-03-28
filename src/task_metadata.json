@@ -363,5 +363,26 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "gene-prediction",
+    "name": "Gene Prediction Method Comparison",
+    "description": "This task compares gene predictions from three different approaches on an E. coli K-12 genome to quantify agreement and identify method-specific predictions.",
+    "task_prompt": "Predict genes in a bacterial genome using three different approaches and compare their predictions. Identify overlapping and unique gene calls across methods. The genome assembly is in data/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,4641652\ngc_content,50.79\npredictor_a_genes,4319\npredictor_b_genes,4305\npredictor_c_genes,4319\noverlap_a_b,4305\noverlap_a_c,4313\noverlap_b_c,4300\nconsensus_all_three,4300</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/gene-prediction/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/gene-prediction/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
