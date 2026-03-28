@@ -1,0 +1,9 @@
+name: downsampling-analysis
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - seqkit
+  - megahit
+  - quast

@@ -384,5 +384,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "downsampling-analysis",
+    "name": "Read Downsampling and Assembly Quality Titration",
+    "description": "This task evaluates how sequencing depth affects assembly quality by subsampling reads at different fractions and assembling each subset. A reference genome is provided for quality assessment.",
+    "task_prompt": "Subsample bacterial sequencing reads at 25%%, 50%%, and 100%% fractions, assemble each subset, and compare assembly quality against a reference genome. Reads are in data/, reference in reference/. The output should be a CSV file with the following columns: 'fraction','total_length','num_contigs','n50','largest_contig','genome_fraction','num_reads'.\n<example>fraction,total_length,num_contigs,n50,largest_contig,genome_fraction,num_reads\n0.25,4320588,254,42834,109463,97.285,364597\n0.50,4351979,154,76641,204577,98.035,729819\n1.00,4367594,136,85401,228985,98.260,1459854</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/downsampling-analysis/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/downsampling-analysis/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/downsampling-analysis/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
