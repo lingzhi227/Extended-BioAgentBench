@@ -1,0 +1,10 @@
+name: phage-characterization
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - megahit
+  - pharokka
+  - checkv
+  - abricate

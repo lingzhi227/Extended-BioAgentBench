@@ -238,5 +238,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "phage-characterization",
+    "name": "Bacteriophage Genome Assembly and Functional Characterization",
+    "description": "This task assembles and characterizes a bacteriophage genome from paired-end Illumina sequencing data. The data contains reads from a known temperate phage. A reference genome is provided in the reference/ directory for comparison.",
+    "task_prompt": "Assemble a bacteriophage genome from paired-end Illumina reads and produce a comprehensive functional characterization including genome quality assessment, gene annotation with functional categories (lysis, lysogeny, replication, structural), and taxonomic classification. A reference genome is provided in the reference/ directory. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,48489\nnum_contigs,1\ngc_content,49.86\nclosest_hit,Escherichia phage Lambda\ncds_count,94\ntrna_count,0\nlysis_genes,3\nlysogeny_genes,3\nreplication_genes,1\nstructural_genes,21\nquality_tier,High-quality\ngenome_completeness,100.0\nvirulence_factors,0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/phage-characterization/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/phage-characterization/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/phage-characterization/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
