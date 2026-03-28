@@ -7,10 +7,10 @@ license: mit
 > **A growing benchmark for evaluating LLM agents on complex bioinformatics workflows.**
 
 [![Dataset on HF](https://img.shields.io/badge/Dataset-HuggingFace-yellow)](https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench)
-[![Tasks](https://img.shields.io/badge/Tasks-10-blue)]()
+[![Tasks](https://img.shields.io/badge/Tasks-22-blue)]()
 [![Based on](https://img.shields.io/badge/Based%20on-BioAgentBench-green)](https://github.com/bioagent-bench/bioagent-bench)
 
-Building on [BioAgentBench](https://arxiv.org/abs/2601.21800) (10 tasks), this benchmark adds **10 new tasks** that test LLM agents on increasingly complex, multi-tool bioinformatics pipelines. Tasks span 6 domains and range from simple linear workflows to depth-8 diamond DAGs with 16+ CLI tools.
+Building on [BioAgentBench](https://arxiv.org/abs/2601.21800) (10 tasks), this benchmark adds **22 new tasks** that test LLM agents on increasingly complex, multi-tool bioinformatics pipelines. Tasks span 6 domains and range from simple linear workflows to depth-8 diamond DAGs with 16+ CLI tools.
 
 **This benchmark is actively growing** — new tasks are added continuously to cover more domains, increase complexity, and push the boundaries of what AI agents can do in bioinformatics.
 
