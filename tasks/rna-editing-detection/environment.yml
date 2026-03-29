@@ -1,0 +1,16 @@
+name: rna-editing-detection
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - star
+  - bwa-mem2
+  - picard
+  - gatk4
+  - varscan
+  - bcftools
+  - samtools
+  - bedtools
+  - pandas
+  - python=3.11

@@ -1404,5 +1404,57 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "dda-lfq-proteomics",
+    "name": "DDA-LFQ Proteomics: 18-Protein Mixture Label-Free Quantification",
+    "description": "This task analyzes DDA (data-dependent acquisition) label-free quantification proteomics data from an 18-protein BSA mixture study. Six mzML files are provided (3 biological replicates x 2 fractions) along with a FASTA database containing target and decoy sequences from Sorangium cellulosum. The goal is to centroid mass spectra, search them against the database using appropriate search engines, score peptide-spectrum matches and control false discovery rate, then quantify proteins across samples. Data from nf-core/quantms test dataset.",
+    "task_prompt": "Perform label-free protein quantification from DDA (data-dependent acquisition) mass spectrometry data. Six mzML files are provided in data/ (3 biological replicates x 2 fractions each) from an 18-protein BSA mixture. A FASTA protein database with target and decoy sequences is in reference/ along with an experimental design file. Centroid the spectra, search against the database, score peptide-spectrum matches, control false discovery rate, and quantify identified proteins across samples. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\nmzml_files_processed,6\ntotal_psms,2165\nunique_peptides,1774\ntarget_proteins,873\ndecoy_proteins,811\nfdr_method,semi-supervised_scoring\nsamples,3\nfractions_per_sample,2</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "rna-editing-detection",
+    "name": "RNA Editing Detection: A-to-I Editing from Matched RNA/DNA Sequencing",
+    "description": "RNA editing is a post-transcriptional modification where adenosine is converted to inosine (A-to-I) by ADAR enzymes, which is read as guanosine by the sequencing machinery. This task detects A-to-I editing events from matched RNA-seq and DNA-seq (whole exome) data from a human cancer sample (chromosome 7 subset). The analysis requires independent preprocessing of RNA and DNA reads with different alignment strategies, multiple variant callers to identify RNA-specific variants, consensus filtering, strand-aware base change classification, known SNP removal, and repeat region annotation to distinguish true editing from genomic variation.",
+    "task_prompt": "Detect RNA editing events by comparing matched RNA-seq and DNA sequencing data. The data/ directory contains paired-end FASTQ files for RNA-seq (rna_R1.fastq.gz, rna_R2.fastq.gz) and whole exome DNA-seq (dna_R1.fastq.gz, dna_R2.fastq.gz) from the same patient. The reference/ directory contains the genome reference (genome.fa), gene annotation (genes.gtf), known variant sites (dbsnp.vcf.gz), population frequency data (gnomad.vcf.gz), and repeat region annotations (repeat_regions.bed). For RNA: quality-filter reads, perform splice-aware alignment with 2-pass mode, mark duplicates, split reads at N-cigar positions, and recalibrate base qualities. For DNA: quality-filter reads, align to the reference, mark duplicates, and recalibrate base qualities. Call variants using at least three independent approaches, then identify variants supported by multiple callers. Filter for A-to-G and T-to-C base changes (which represent editing on opposite strands), remove known genomic SNPs, and annotate overlap with repeat regions. The output should be a CSV file with columns: 'metric','value'.\n<example>\nmetric,value\nrna_raw_reads,500000\nrna_clean_reads,492236\nrna_q30_rate,94.3\nrna_unique_mapping_rate,3.62\nrna_mapped_reads,32593\nrna_duplication_rate,0.87\ndna_raw_reads,500000\ndna_clean_reads,491876\ndna_q30_rate,94.4\ndna_mapped_reads,84510\ndna_mapping_rate,17.11\ndna_duplication_rate,0.16\ncaller1_variants,0\ncaller2_variants,2512\ncaller3_variants,18\nintersection_variants,10\nag_tc_candidates,0\nnovel_variants,10\nrepeat_region_variants,4\ncandidate_editing_sites,0\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/rna-editing-detection/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/rna-editing-detection/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/rna-editing-detection/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

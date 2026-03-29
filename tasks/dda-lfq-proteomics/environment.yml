@@ -1,0 +1,10 @@
+name: dda-lfq-proteomics
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - openms-thirdparty>=3.0
+  - comet-ms
+  - msgf_plus
+  - percolator
