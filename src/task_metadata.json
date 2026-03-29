@@ -769,5 +769,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "spatial-transcriptomics",
+    "name": "Spatial Transcriptomics: Visium FFPE Brain Cancer Analysis",
+    "description": "This task analyzes Visium spatial transcriptomics data from a human FFPE brain cancer sample processed with the CytAssist platform. The data includes raw sequencing reads (FASTQ), pre-aligned reads (BAM), and quantified spot-level expression matrices with spatial coordinates and tissue images from a standard processing pipeline. The input consists of a chr22-subset reference to keep the task lightweight. The goal is to assess read quality, alignment statistics, load the spatial expression data, perform quality control, normalize, cluster spots both spatially and non-spatially, identify spatially variable genes and marker genes per cluster, compute neighborhood enrichment and co-occurrence statistics, and produce a summary report.",
+    "task_prompt": "Analyze Visium spatial transcriptomics data from an FFPE brain cancer sample. The data/ directory contains: raw FASTQ reads (R1/R2 for two lanes), pre-processed outputs in data/outs/ (count matrices in raw_feature_bc_matrix/, spatial coordinates and tissue images in spatial/, and a pre-aligned BAM file). The reference/ directory contains a chr22 genome reference. Assess read quality, compute alignment statistics from the provided BAM, load the spatial expression data with coordinates, filter low-quality spots, normalize, identify highly variable genes, reduce dimensions, cluster spots, compute spatial autocorrelation (identify spatially variable genes), perform neighborhood enrichment analysis between clusters, compute co-occurrence statistics, find cluster marker genes, and aggregate QC reports. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntotal_reads,20000\nmapped_reads,19759\nmapping_rate_pct,98.8\nduplicate_reads,2376\ntotal_spots,11397\nin_tissue_spots,10881\nspots_with_counts,7089\ngenes_detected,7709\nmedian_genes_per_spot,2\nmedian_counts_per_spot,2\nnum_hvg,100\nnum_pcs,15\npca_variance_ratio_pc1,0.0359\nnum_spatial_clusters,12\ncluster_0_size,6785\ncluster_0_marker,ENSG00000120885\ntop_spatial_gene,ENSG00000014824\ntop_morans_I,-0.0003\nspatially_variable_genes,0\nnhood_enrichment_max_z,3.9837\nco_occurrence_max,7.9322\nspatial_extent_x,2439.0\nspatial_extent_y,2399.0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/spatial-transcriptomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/spatial-transcriptomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/spatial-transcriptomics/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

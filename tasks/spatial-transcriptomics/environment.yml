@@ -1,0 +1,25 @@
+name: spatial-transcriptomics
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - star=2.7.11b
+  - samtools=1.21
+  - fastqc=0.12.1
+  - multiqc=1.25.2
+  - scanpy
+  - squidpy=1.8.1
+  - anndata
+  - leidenalg
+  - celltypist
+  - pandas
+  - matplotlib
+  - scipy
+  - numpy
+  - seaborn
+  - scikit-misc
+  - pillow
+  - tifffile
+  - scikit-image
