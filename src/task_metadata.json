@@ -1710,5 +1710,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "scatac-seq",
+    "name": "Single-Cell ATAC-seq Chromatin Accessibility Analysis",
+    "description": "Single-cell ATAC-seq (scATAC-seq) measures genome-wide chromatin accessibility at single-cell resolution, enabling identification of cell types by their regulatory landscape. This task processes a 10x Genomics PBMC scATAC-seq fragment file through quality control (TSS enrichment, fragment counts), cell filtering, tile matrix construction, dimensionality reduction, doublet detection, cell clustering, per-cluster peak calling, gene activity scoring, and marker gene identification to characterize immune cell populations by their epigenomic signatures.",
+    "task_prompt": "Analyze single-cell ATAC-seq data from human PBMCs to profile chromatin accessibility at single-cell resolution. A fragment file (fragments.tsv.gz) containing 1500 cells is in data/, along with per-barcode quality metrics. A gene annotation file (GENCODE v32 GTF) is in reference/. Import the fragments, compute quality metrics (TSS enrichment, fragment counts), filter low-quality cells, create a genomic tile matrix, perform dimensionality reduction, detect doublets, cluster cells, call accessible chromatin peaks per cluster, compute gene activity scores, identify marker genes per cluster, and generate a comprehensive report.\nThe output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\ntotal_cells_imported,1500\ncells_after_qc,1499\ncells_after_doublet_removal,1499\nmedian_tsse,26.26\nmean_tsse,26.35\nmedian_fragments_per_cell,15537\nmean_fragments_per_cell,16862\nnum_clusters,5\ntotal_peaks,248468\nn_genes_in_activity_matrix,60606\nn_significant_markers,18038\ncluster_0_cells,588\ncluster_1_cells,291\ncluster_2_cells,256\ncluster_3_cells,234\ncluster_4_cells,130\ndoublets_detected,0\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/scatac-seq/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/scatac-seq/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/scatac-seq/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

@@ -1,0 +1,16 @@
+name: scatac-seq
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - snapatac2
+  - macs2
+  - samtools
+  - bedtools
+  - scanpy
+  - anndata
+  - pandas
+  - matplotlib
+  - multiqc
