@@ -1,0 +1,12 @@
+name: riboseq
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bowtie2
+  - star
+  - samtools
+  - sortmerna
+  - salmon
+  - multiqc

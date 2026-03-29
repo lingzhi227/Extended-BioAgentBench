@@ -967,5 +967,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "riboseq",
+    "name": "Ribosome Profiling Translation Analysis",
+    "description": "This task analyzes ribosome profiling (Ribo-seq) data from yeast to quantify active translation. Single-end reads, a reference genome, and gene annotation are provided.",
+    "task_prompt": "Analyze ribosome profiling sequencing data to quantify translational activity. Remove rRNA contamination, align ribosome-protected fragments, determine the characteristic RPF length profile, and quantify gene-level translation. Reads in data/, genome and annotation in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,500000\npassed_length_filter,418491\nrrna_pct,0.0\nnon_rrna_reads,418491\nuniquely_mapped,150640\nmapping_pct,36.00\npeak_rpf_length,28\ngenes_with_reads,4652</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/riboseq/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/riboseq/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/riboseq/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

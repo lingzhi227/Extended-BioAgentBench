@@ -1,0 +1,12 @@
+name: mhc-immunopeptidomics
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.10
+  - pandas
+  - thermorawfileparser
+  - openms>=3.0
+  - comet-ms
+  - percolator>=3.0
