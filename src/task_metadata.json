@@ -1120,32 +1120,6 @@
     }
   },
   {
-    "task_id": "dia-proteomics",
-    "name": "DIA Proteomics Quantification: Malignant vs Benign Protein Expression",
-    "description": "This task analyzes data-independent acquisition (DIA) proteomics data from a clinical study comparing malignant and benign samples. Four DIA mzML files (2 conditions x 2 replicates) are provided along with a pre-built spectral library in PQP format, iRT calibration peptides, and a sample annotation sheet. The goal is to quantify proteins across conditions: search each run against the spectral library, control false discovery rate, align quantified features across runs, and test for differential protein abundance between conditions. Data from nf-core/diaproteomics test dataset (PRIDE PXD003179).",
-    "task_prompt": "Quantify proteins from DIA (data-independent acquisition) mass spectrometry data. Four mzML files are provided in data/ (2 conditions x 2 replicates: Malignant vs Benign). A spectral library and iRT calibration peptides are in reference/ along with a sample sheet mapping runs to conditions. Analyze each run against the spectral library, score and filter peptide identifications, align features across runs, and perform differential protein quantification between conditions. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\ndia_runs_processed,4\nfeatures_per_run,457\ntotal_features,1828\npeptides_identified,108\ntarget_proteins,46\ndecoy_proteins,38\naligned_features,12\ndifferentially_expressed_proteins,0\nfdr_threshold,0.01\nconditions,Malignant;Benign</example>",
-    "download_urls": {
-      "data": [
-        {
-          "filename": "data.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dia-proteomics/data.tar.gz"
-        }
-      ],
-      "reference_data": [
-        {
-          "filename": "reference.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dia-proteomics/reference.tar.gz"
-        }
-      ],
-      "results": [
-        {
-          "filename": "results.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dia-proteomics/results.tar.gz"
-        }
-      ]
-    }
-  },
-  {
     "task_id": "viral-phylodynamics",
     "name": "Viral Phylodynamics (Molecular Clock Analysis)",
     "description": "Molecular clock analysis estimates evolutionary rates, divergence times, and epidemic dynamics from time-stamped viral sequences using Bayesian and maximum-likelihood methods. This task involves multiple sequence alignment, phylogenetic model selection, temporal signal assessment, molecular clock estimation, geographic migration reconstruction (phylogeography), effective population size inference (skyline analysis), and ancestral sequence reconstruction. Key challenges include handling ambiguous sampling dates, detecting recombination, choosing appropriate clock models (strict vs relaxed), and correctly rooting the phylogeny for time calibration.",
@@ -1603,6 +1577,32 @@
         {
           "filename": "results.tar.gz",
           "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/gwas-association/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "dia-proteomics",
+    "name": "Label-Free Proteomics: BSA Standard Identification",
+    "description": "Identify and quantify proteins from label-free LC-MS/MS data. Three replicate BSA (bovine serum albumin) runs with ~4800 spectra, searched against 6052 reviewed bovine proteins.",
+    "task_prompt": "Identify and quantify proteins from label-free mass spectrometry data. The data/ directory contains three mzML files (BSA1.mzML, BSA2.mzML, BSA3.mzML) from replicate LC-MS/MS runs of a bovine serum albumin standard. The reference/ directory contains a protein sequence database (proteins.fasta) with reviewed bovine proteins. Generate a target-decoy database, search spectra against it using at least one search engine, score peptide-spectrum matches, perform protein inference, and compute identification statistics including sequence coverage of the primary analyte (BSA). The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\nsamples,3\ntotal_spectra,4812\ntotal_psms,2627\nunique_peptides,932\nidentified_proteins,927\nsequence_coverage_pct,18.6\navg_peptide_length,9.4\npsms_BSA1,954\npsms_BSA2,963\npsms_BSA3,710\npsms_BSA1_msgf,954\npsms_BSA2_msgf,963\npsms_BSA3_msgf,710</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dia-proteomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dia-proteomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dia-proteomics/results.tar.gz"
         }
       ]
     }

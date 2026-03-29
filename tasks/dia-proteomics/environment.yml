@@ -4,7 +4,11 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - openms>=3.0
-  - pyprophet
-  - msproteomicstools
-  - bioconductor-msstats
+  - openms
+  - msgf_plus
+  - percolator
+  - xtandem
+  - samtools
+  - python=3.10
+  - pandas
+  - scipy

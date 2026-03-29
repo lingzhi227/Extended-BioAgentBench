@@ -70,25 +70,25 @@ Building on [BioAgentBench](https://arxiv.org/abs/2601.21800) (10 tasks), this b
 | 53 | `hicar-chromatin` | HiCAR Chromatin Interaction: Proximity Ligation and Acc |
 | 54 | `radseq-popgen` | RADseq Population Genetics: Stickleback Freshwater-Mari |
 | 55 | `mag-recovery` | MAG Recovery: Metagenome-Assembled Genomes from Environ |
-| 56 | `dia-proteomics` | DIA Proteomics Quantification: Malignant vs Benign Prot |
-| 57 | `viral-phylodynamics` | Viral Phylodynamics (Molecular Clock Analysis) |
-| 58 | `edna-metabarcoding` | eDNA Aquatic Metabarcoding Biodiversity Assessment |
-| 59 | `metatranscriptomics` | Metatranscriptomics: Active Microbial Community Profili |
-| 60 | `nascent-transcription` | Nascent Transcription: GRO-seq Polymerase Activity Prof |
-| 61 | `circrna-discovery` | Circular RNA Discovery: C. elegans Wild-type vs fust-1  |
-| 62 | `hic-3d-conformation` | Hi-C 3D Genome Conformation Analysis |
-| 63 | `genome-scaffolding` | Long-Read Genome Scaffolding of Fragmented Assembly |
-| 64 | `longread-rna-isoform` | Long-Read RNA Isoform Discovery from Direct RNA Sequenc |
-| 65 | `circrna-detection` | Circular RNA Detection and Quantification |
-| 66 | `pharmacogenomics` | CYP2D6 Pharmacogenomic Star Allele Calling |
-| 67 | `dda-lfq-proteomics` | DDA-LFQ Proteomics: 18-Protein Mixture Label-Free Quant |
-| 68 | `rna-editing-detection` | RNA Editing Detection: A-to-I Editing from Matched RNA/ |
-| 69 | `cnv-detection-wes` | CNV Detection from Whole-Exome Sequencing |
-| 70 | `haplotype-phasing` | Haplotype Phasing and Genotype Refinement |
-| 71 | `dda-proteomics-simple` | DDA Proteomics: Single-Engine BSA Identification |
-| 72 | `immune-repertoire` | Immune Repertoire Analysis (BCR-seq) |
-| 73 | `germline-wes-gatk` | Germline WES Variant Calling: Clinical Exome Analysis |
-| 74 | `gwas-association` | GWAS Population Association Testing |
+| 56 | `viral-phylodynamics` | Viral Phylodynamics (Molecular Clock Analysis) |
+| 57 | `edna-metabarcoding` | eDNA Aquatic Metabarcoding Biodiversity Assessment |
+| 58 | `metatranscriptomics` | Metatranscriptomics: Active Microbial Community Profili |
+| 59 | `nascent-transcription` | Nascent Transcription: GRO-seq Polymerase Activity Prof |
+| 60 | `circrna-discovery` | Circular RNA Discovery: C. elegans Wild-type vs fust-1  |
+| 61 | `hic-3d-conformation` | Hi-C 3D Genome Conformation Analysis |
+| 62 | `genome-scaffolding` | Long-Read Genome Scaffolding of Fragmented Assembly |
+| 63 | `longread-rna-isoform` | Long-Read RNA Isoform Discovery from Direct RNA Sequenc |
+| 64 | `circrna-detection` | Circular RNA Detection and Quantification |
+| 65 | `pharmacogenomics` | CYP2D6 Pharmacogenomic Star Allele Calling |
+| 66 | `dda-lfq-proteomics` | DDA-LFQ Proteomics: 18-Protein Mixture Label-Free Quant |
+| 67 | `rna-editing-detection` | RNA Editing Detection: A-to-I Editing from Matched RNA/ |
+| 68 | `cnv-detection-wes` | CNV Detection from Whole-Exome Sequencing |
+| 69 | `haplotype-phasing` | Haplotype Phasing and Genotype Refinement |
+| 70 | `dda-proteomics-simple` | DDA Proteomics: Single-Engine BSA Identification |
+| 71 | `immune-repertoire` | Immune Repertoire Analysis (BCR-seq) |
+| 72 | `germline-wes-gatk` | Germline WES Variant Calling: Clinical Exome Analysis |
+| 73 | `gwas-association` | GWAS Population Association Testing |
+| 74 | `dia-proteomics` | Label-Free Proteomics: BSA Standard Identification |
 
 ## Quick start
 
