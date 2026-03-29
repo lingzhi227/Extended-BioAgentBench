@@ -1,0 +1,17 @@
+name: longread-rna-isoform
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - nanoplot
+  - minimap2
+  - samtools
+  - stringtie
+  - gffcompare
+  - bedtools
+  - seqtk
+  - multiqc
+  - python=3.10
+  - pandas
+  - scipy

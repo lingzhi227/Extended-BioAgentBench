@@ -1326,5 +1326,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "longread-rna-isoform",
+    "name": "Long-Read RNA Isoform Discovery from Direct RNA Sequencing",
+    "description": "This task discovers and characterizes transcript isoforms from long-read direct RNA sequencing. Data is from the SG-NEx project (A549 cell line, 80K reads, chr22). The workflow involves read QC, splice-aware alignment, transcript assembly, comparison with reference annotation for known/novel isoform classification, expression quantification, and coverage analysis.",
+    "task_prompt": "Discover and characterize transcript isoforms from long-read direct RNA sequencing data. The data/ directory contains a FASTQ file (reads.fastq.gz) with long single-molecule RNA reads from a human lung carcinoma cell line. The reference/ directory contains chromosome 22 sequence (chr22.fa) and gene annotation (chr22.gtf). Assess read quality, perform splice-aware long-read alignment, assemble transcripts, compare assembled transcripts against the reference annotation to classify known vs novel isoforms, quantify transcript expression, and compute coverage statistics. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\ntotal_reads,80000.0\nmean_read_length,1030.7\nmedian_read_length,826.0\nread_n50,1350.0\nmean_quality,10.4\ntotal_bases,82457048.0\nmapped_reads,9406\nmapping_pct,11.76\nassembled_transcripts,340\nassembled_genes,297\nmean_transcript_length,12759\ntranscript_n50,36578\nmean_coverage,18.12\nbase_sensitivity,15.8\nbase_precision,95.4\nknown_isoforms,298\nnovel_isoforms,42\nmulti_exon_transcripts,219\nexact_match_transcripts,281\nnovel_junction_transcripts,5\nintergenic_transcripts,4\nexpressed_transcripts,340\nhighly_expressed_transcripts,97\nnovel_loci,30</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/longread-rna-isoform/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/longread-rna-isoform/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/longread-rna-isoform/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
