@@ -1,0 +1,17 @@
+name: pharmacogenomics
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - fastp
+  - bwa-mem2
+  - samtools
+  - picard
+  - gatk4
+  - bcftools
+  - mosdepth
+  - bedtools
+  - pandas
+  - scipy

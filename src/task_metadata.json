@@ -1378,5 +1378,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "pharmacogenomics",
+    "name": "CYP2D6 Pharmacogenomic Star Allele Calling",
+    "description": "Pharmacogenomics uses genetic variation to predict drug response. CYP2D6 is one of the most clinically important pharmacogenes, metabolizing ~25% of commonly prescribed drugs. This task involves calling CYP2D6 star alleles from WGS data (GIAB HG002), including copy number estimation from the CYP2D6/CYP2D7 depth ratio, variant-based star allele assignment, activity score calculation, metabolizer phenotype prediction, and drug interaction reporting using CPIC guidelines.",
+    "task_prompt": "Determine pharmacogenomic star alleles from whole-genome sequencing data, focusing on the CYP2D6 gene and its clinical implications for drug metabolism. Paired-end WGS reads covering chromosome 22 are in data/. The reference/ directory contains the chr22 reference genome (GRCh38), star allele variant definitions, and drug-gene interaction databases from CPIC. Perform read QC, align to the reference, mark duplicates, call variants in the CYP2D6/CYP2D7 region, estimate gene copy number from depth ratios, determine the star allele diplotype, calculate the metabolizer activity score, predict the metabolizer phenotype, and identify affected drug-gene interactions.\nThe output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\ntotal_reads_before_qc,1648406\ntotal_reads_after_qc,1566772\nq30_rate_pct,89.93\nmapped_reads,1569886\nmapping_rate_pct,99.99\nduplicate_rate_pct,0.85\ncyp2d6_mean_depth,46.6\ncyp2d7_mean_depth,46.5\ncyp2d6_cyp2d7_depth_ratio,1.003\ncopy_number_estimate,2\nvariants_in_cyp2d6_region,36\nsnps_in_cyp2d6_region,34\ndiplotype,*4/*17\ndefining_variants_found,3\nactivity_score,0.5\nmetabolizer_phenotype,Intermediate Metabolizer\ncpic_drug_pairs_total,80\ncpic_level_ab_drugs,22\nmosdepth_cyp2d6_coverage,45.9\nmosdepth_cyp2d7_coverage,43.4\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/pharmacogenomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/pharmacogenomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/pharmacogenomics/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
