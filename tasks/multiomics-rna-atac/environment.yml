@@ -1,0 +1,23 @@
+name: multiomics-rna-atac
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - fastp
+  - star
+  - bowtie2
+  - samtools
+  - salmon
+  - stringtie
+  - macs3
+  - picard
+  - deeptools
+  - homer
+  - bedtools
+  - subread
+  - python=3.10
+  - pandas
+  - matplotlib
+  - scipy
+  - numpy

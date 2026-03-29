@@ -1736,5 +1736,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "multiomics-rna-atac",
+    "name": "Multi-omics Integration (RNA-seq + ATAC-seq)",
+    "description": "Multi-omics integration of matched RNA-seq and ATAC-seq data identifies regulatory circuits by linking chromatin accessibility to gene expression. This task requires parallel processing of two data modalities (transcriptomics and epigenomics), followed by cross-modality integration including peak-to-gene assignment, motif enrichment analysis, accessibility-expression correlation, and regulatory network construction. Key challenges include different normalization requirements across modalities, correct peak calling parameters for open chromatin data, and meaningful integration of distinct signal types.",
+    "task_prompt": "Integrate matched RNA-seq and ATAC-seq data from the same cell line to identify regulatory circuits linking chromatin accessibility to gene expression. RNA-seq paired-end reads are in data/rna_R1.fastq.gz and data/rna_R2.fastq.gz. ATAC-seq paired-end reads are in data/atac_R1.fastq.gz and data/atac_R2.fastq.gz. The reference genome (chr22) is in reference/genome.fasta and gene annotation in reference/genes.gtf. For the RNA-seq track: perform quality control, align reads, quantify transcript expression, and assemble transcripts. For the ATAC-seq track: perform quality control, align reads, remove duplicates, call accessible chromatin peaks, and generate normalized signal tracks. Then integrate both modalities: assign peaks to nearest genes, perform motif enrichment in accessible regions, correlate peak accessibility scores with gene expression, and identify regulatory circuits. The output should be a CSV file at results/report.csv with columns: metric,value.\n<example>\nmetric,value\nrna_total_reads,4000000\nrna_filtered_reads,3920910\nrna_q30_rate,97.7\natac_total_reads,8000000\natac_filtered_reads,7585464\natac_q30_rate,93.3\nrna_mapped_reads,257844\nrna_mapping_rate,4.99\natac_mapping_rate,5.36\natac_duplication_rate,8.4\ntotal_peaks,1705\nmedian_peak_width,374\ntotal_peak_bp,873953\ntotal_genes_annotated,1445\nexpressed_genes,617\nhighly_expressed_genes,103\nassembled_transcripts,1445\npeak_gene_links,1786\ncorr_expressed_genes,617\ncorr_peak_gene_links,1786\ncorr_median_peak_gene_distance,7861\ncorr_peaks_within_10kb,1002\nsignal_track_generated,yes\nmotif_total_motifs_tested,1049\nmotif_significant_motifs,84\nmotif_top_motif,Fli1\ntotal_regulatory_links,1689\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/multiomics-rna-atac/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/multiomics-rna-atac/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/multiomics-rna-atac/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
