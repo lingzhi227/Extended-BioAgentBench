@@ -1,0 +1,14 @@
+name: haplotype-phasing
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bcftools
+  - plink2
+  - shapeit4
+  - beagle
+  - samtools
+  - python=3.10
+  - pandas
+  - scipy
