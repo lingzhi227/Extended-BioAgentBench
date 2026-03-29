@@ -1606,5 +1606,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "structural-variant-multi",
+    "name": "Structural Variant Detection: Multi-caller Human SV Analysis",
+    "description": "Structural variant (SV) detection from human whole-exome sequencing data using multiple orthogonal calling approaches. SVs include deletions, duplications, inversions, insertions, and translocations larger than 50 base pairs. This task requires aligning reads, marking duplicates, then running three independent SV detection methods: paired-end/split-read analysis, depth-based anomaly detection with large indel extraction, and discordant read pair clustering. Results are merged across callers, annotated for gene overlap and clinical significance, and summarized by SV type and size.",
+    "task_prompt": "Detect structural variants from whole-exome sequencing data using multiple independent calling approaches. The data/ directory contains paired-end FASTQ files (sample_R1.fastq.gz, sample_R2.fastq.gz). The reference/ directory contains the genome reference (genome.fa), gene annotation (genes.gtf), gene regions (gene_regions.bed), and a clinical SV database (clinvar_sv.vcf.gz). Align reads with proper read groups, sort, and mark duplicates. Run at least three independent SV detection approaches (e.g., paired-end signal analysis, depth-based detection, discordant read clustering). Merge SV calls across methods, compute SV type distribution (deletions, duplications, inversions, insertions, breakends), annotate against gene regions and the clinical database, and generate a summary report. The output should be a CSV file with columns: 'metric','value'.\n<example>\nmetric,value\nraw_reads,500000\nclean_reads,486458\nq30_rate,94.5\nmapped_reads,83358\nmapping_rate,17.06\ncaller1_svs,0\ncaller2_svs,27131\ncaller3_svs,2876\nmerged_svs,30007\ndeletion_count,30007\nduplication_count,0\ninversion_count,0\ninsertion_count,0\nbreakend_count,0\ngene_overlapping_svs,0\nclinvar_sv_annotated,0\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/structural-variant-multi/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/structural-variant-multi/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/structural-variant-multi/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

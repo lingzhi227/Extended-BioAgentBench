@@ -1,0 +1,16 @@
+name: structural-variant-multi
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bwa-mem2
+  - samtools
+  - sambamba
+  - delly
+  - survivor
+  - bcftools
+  - snpsift
+  - bedtools
+  - pandas
+  - python=3.11
