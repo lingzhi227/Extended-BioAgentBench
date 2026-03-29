@@ -1,3 +1,11 @@
+
+> **WARNING: COLLISION ALERT** (added by Session A)
+> These task IDs already exist from the CANDIDATES phase. Sessions F-J MUST SKIP them:
+> - `circrna-detection` — ALREADY BUILT (skip in Session F)
+> - `dda-lfq-proteomics` — ALREADY BUILT (skip in Session I)
+> - `mag-recovery` — ALREADY BUILT (skip in Session H)
+> - `immune-repertoire` — BLOCKED by NCBI FTP (Session F should try, but may fail)
+
 # 25 GOLD Bioinformatics Benchmark Task Designs
 
 > All tasks: HARD-level DAG complexity (depth 8+, 3+ convergence points, nested diamonds), 8-16 CLI tools, real public data (<1 GB), runtime <4h on 8 CPUs, all tools conda-installable.
