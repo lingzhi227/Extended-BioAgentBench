@@ -1458,32 +1458,6 @@
     }
   },
   {
-    "task_id": "dda-lfq-proteomics",
-    "name": "DDA Label-Free Quantitative Proteomics",
-    "description": "This task performs data-dependent acquisition mass spectrometry analysis to identify and quantify proteins. An mzML spectral file and a protein sequence database are provided.",
-    "task_prompt": "Identify proteins from mass spectrometry data by searching spectra against a protein database, controlling false discovery rate, and quantifying identified peptides and proteins. Spectral data in data/, protein database in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_spectra,1690\ndatabase_size_with_decoys,12104\nsearch_engine_hits,1604\npsms_after_fdr,16\nunique_peptides,16\nproteins_identified,9</example>",
-    "download_urls": {
-      "data": [
-        {
-          "filename": "data.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/data.tar.gz"
-        }
-      ],
-      "reference_data": [
-        {
-          "filename": "reference.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/reference.tar.gz"
-        }
-      ],
-      "results": [
-        {
-          "filename": "results.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/results.tar.gz"
-        }
-      ]
-    }
-  },
-  {
     "task_id": "cnv-detection-wes",
     "name": "CNV Detection from Whole-Exome Sequencing",
     "description": "Detect copy number variants from whole-exome sequencing data using multiple CNV callers, merge calls, and assess concordance. Copy number variants (CNVs) are genomic segments that differ in copy number from the diploid reference. WES-based CNV detection requires paired tumor-normal analysis with specialized callers that account for the non-uniform capture efficiency across exome targets. The input includes paired-end reads for both tumor and normal samples, a reference genome (chr20), and an exome target intervals BED file.",
