@@ -1,0 +1,17 @@
+name: repeat-element-annotation
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - repeatmodeler
+  - repeatmasker
+  - cd-hit
+  - bedtools
+  - samtools
+  - blast
+  - python=3.10
+  - pandas
+  - matplotlib
+  - perl
+  - multiqc

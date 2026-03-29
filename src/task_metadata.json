@@ -1658,5 +1658,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "repeat-element-annotation",
+    "name": "Repeat Element Annotation (Transposable Element Analysis)",
+    "description": "Transposable element (TE) annotation identifies and classifies repetitive DNA elements in genome assemblies. This task requires building de novo repeat consensus libraries, combining them with known databases, running comprehensive genome masking, analyzing the repeat divergence landscape, computing TE-gene proximity, estimating TE ages via sequence divergence, and identifying solo-LTR elements. Key challenges include long runtime for de novo library construction, correct merging and deduplication of libraries, distinguishing TEs from simple repeats, and parsing hierarchical TE classification schemes.",
+    "task_prompt": "Annotate and classify transposable elements (TEs) in a genome assembly. The genome sequence is in data/genome.fasta and a gene annotation file is in reference/genes.gtf (with a BED version at reference/genes.bed). Build a de novo repeat library from the genome, combine it with known repeat databases, then perform comprehensive repeat annotation. Analyze the repeat landscape (divergence distribution), compute TE-gene proximity statistics, estimate TE age distributions, classify TEs into major families (LTR, LINE, DNA transposons, etc.), identify solo-LTR elements vs intact LTR retrotransposons, and analyze gene disruption by TE insertions. The output should be a CSV file at results/report.csv with columns: metric,value.\n<example>\nmetric,value\ntotal_length,24890402\nnum_sequences,2\ngc_content,0.4208\nn_content,0.0033\nseq_chr4_length,1348131\nseq_chrX_length,23542271\ntotal_repeat_elements,33148\ntotal_repeat_bp,3971801\nrepeat_fraction,0.1596\nnum_major_te_classes,7\ndenovo_te_families,128\nmerged_library_size,120\nte_ltr_bp,1174008\nte_ltr_count,1384\nte_unknown_bp,845559\nte_unknown_count,2671\nte_line_bp,701957\nte_line_count,590\nte_dna_bp,41761\nte_dna_count,105\nte_mean_divergence,11.75\nyoungest_te_class,rRNA\nte_gene_intronic,0\nte_gene_exonic,1868\nte_gene_upstream_1kb,2499\nte_gene_upstream_5kb,3422\nte_gene_intergenic,3836\nte_gene_genes_with_te_insertions,1868\ntotal_ltr_elements,1384\nsolo_ltr_candidates,1105\nintact_ltr_candidates,279\nsolo_to_intact_ratio,3.96\nlandscape_generated,yes\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/repeat-element-annotation/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/repeat-element-annotation/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/repeat-element-annotation/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
