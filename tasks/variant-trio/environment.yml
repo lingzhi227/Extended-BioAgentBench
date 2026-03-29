@@ -1,0 +1,15 @@
+name: variant-trio
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bcftools=1.21
+  - samtools=1.21
+  - gatk4=4.6.1.0
+  - genmod=3.10.2
+  - vcftools=0.1.16
+  - htslib=1.21
+  - python=3.11
+  - pandas
+  - numpy

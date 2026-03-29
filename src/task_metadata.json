@@ -889,5 +889,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "variant-trio",
+    "name": "Variant Annotation Trio: Clinical Interpretation of Ashkenazi Family",
+    "description": "This task performs clinical variant annotation and inheritance analysis on a trio (proband, father, mother) from the GIAB Ashkenazi family. Three VCF files contain benchmark variant calls for chromosome 22 of GRCh38 from HG002 (son/proband), HG003 (father), and HG004 (mother). A chr22 reference FASTA, a clinical variant significance database, and a PED pedigree file are provided. The goal is to merge trio variants, filter by variant type (SNPs and indels separately), annotate with clinical databases, determine inheritance patterns, and identify clinically relevant variants.",
+    "task_prompt": "Perform clinical variant annotation and inheritance analysis on a trio of VCF files. The data/ directory contains three VCF files with variant calls for a family trio (son as proband, plus father and mother) on chromosome 22. The reference/ directory contains a chr22 FASTA reference, a clinical variant significance database (VCF format), and a pedigree (PED) file defining family relationships. Merge the trio VCFs, separate SNPs from indels, apply quality filters to each type independently, annotate variants with clinical significance from the database, determine inheritance patterns using the pedigree, and classify variants. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\ntotal_variants,69655\nsnps,58016\ninsertions,5836\ndeletions,5803\ntitv_ratio,2.40\nhet_hg002,32826\nhom_alt_hg002,17341\nhet_hg003,33322\nhom_alt_hg003,17248\nhet_hg004,30304\nhom_alt_hg004,16624\nautosomal_dominant,1132\nautosomal_dominant_denovo,1132\nautosomal_recessive_hom,21578\nautosomal_recessive_comp,0\nx_linked_recessive,0\nx_linked_dominant,0\nclinvar_pathogenic,0\nclinvar_likely_pathogenic,0\nclinvar_uncertain,17\nclinvar_benign,1181\nclinvar_likely_benign,28\ntotal_clinvar_annotated,1248\ntop_pathogenic_gene,none\ntop_pathogenic_pos,none\ntop_pathogenic_change,none\nmendelian_errors,0\nde_novo_candidates,1132\ncompound_het_candidates,0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/variant-trio/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/variant-trio/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/variant-trio/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
