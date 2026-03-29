@@ -868,5 +868,26 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "amr-bgc-screening",
+    "name": "Antimicrobial Resistance and Biosynthetic Gene Cluster Screening",
+    "description": "This task screens an E. coli O157:H7 genome for antimicrobial resistance genes, biosynthetic gene clusters, and virulence factors using multiple detection methods.",
+    "task_prompt": "Screen a bacterial genome for antimicrobial resistance genes using nucleotide and protein-based methods, detect biosynthetic gene clusters, and identify virulence factors. The assembled genome is in data/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ngenome_length,5594605\npredicted_genes,5388\namr_genes_nucleotide,50\namr_genes_protein,0\nstress_response_genes,0\nvirulence_amr_genes,0\nbiosynthetic_gene_clusters,0\nvirulence_factors,127</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/amr-bgc-screening/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/amr-bgc-screening/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

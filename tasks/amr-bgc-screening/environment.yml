@@ -1,0 +1,10 @@
+name: amr-bgc-screening
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - prodigal
+  - abricate
+  - ncbi-amrfinderplus
+  - hmmer
+  - gecco
