@@ -1,0 +1,8 @@
+name: dda-proteomics-simple
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - openms
+  - comet-ms
+  - percolator

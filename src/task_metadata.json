@@ -1482,5 +1482,57 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "haplotype-phasing",
+    "name": "Haplotype Phasing and Genotype Refinement",
+    "description": "Phase genotypes and refine variant calls from 1000 Genomes Phase 3 chr22 data. 50 study samples with ~10K biallelic SNPs, 200-sample reference panel.",
+    "task_prompt": "Phase genotypes and refine variant calls from a genotype study using a reference panel. The data/ directory contains a VCF file (study.vcf.gz) with 50 individuals genotyped at biallelic SNP positions on chromosome 22. The reference/ directory contains a reference panel VCF (ref_panel.vcf.gz) with 200 individuals, and genetic recombination maps for chr22. Normalize variants, perform quality control (filter by missingness, MAF, and HWE), find shared sites between study and reference, phase haplotypes using at least two statistical phasing methods, compare phasing concordance, perform genotype imputation using the reference panel, and assess post-imputation quality including LD pruning. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\nstudy_samples,50\nstudy_variants_before_qc,10050\nstudy_variants_after_qc,9936\nvariants_removed_by_qc,114\nreference_samples,200\nreference_variants,21751\nshared_variants,8972\nshapeit4_phased_variants,8972\nbeagle_phased_variants,8972\nphasing_concordance_pct,88.29\nimputed_total_variants,8972\nimputed_filtered_variants,8972\nnewly_imputed_variants,0\nld_pruned_variants,2662\nld_removed_variants,6310</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/haplotype-phasing/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/haplotype-phasing/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/haplotype-phasing/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "dda-proteomics-simple",
+    "name": "DDA Proteomics: Single-Engine BSA Identification",
+    "description": "This task performs basic DDA mass spectrometry protein identification on a BSA standard using a single search engine. An mzML spectral file and a bovine protein database are provided.",
+    "task_prompt": "Identify proteins from mass spectrometry data by searching spectra against a protein database, controlling false discovery rate, and counting identified peptides and proteins. Spectral data in data/, protein database in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_spectra,1690\ndatabase_size_with_decoys,12104\nsearch_engine_hits,1604\npsms_after_fdr,16\nunique_peptides,16\nproteins_identified,9</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-proteomics-simple/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-proteomics-simple/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-proteomics-simple/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
