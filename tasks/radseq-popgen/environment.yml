@@ -1,0 +1,11 @@
+name: radseq-popgen
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - stacks=2.68
+  - fastqc
+  - samtools
+  - vcftools
+  - plink

@@ -1071,5 +1071,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "radseq-popgen",
+    "name": "RADseq Population Genetics: Stickleback Freshwater-Marine Divergence",
+    "description": "This task analyzes RADseq (restriction-site associated DNA sequencing) data from a study of threespine stickleback (Gasterosteus aculeatus). Sixteen individuals from two groups \u2014 8 from Bear Paw Lake (freshwater) and 8 from Rabbit Slough (oceanic/anadromous) \u2014 are multiplexed in a single FASTQ file with inline barcodes. The data uses SbfI restriction enzyme, single-end 36bp reads. The goal is to perform de novo RADseq analysis: demultiplex reads, build per-sample loci, construct a catalog of loci across all samples, genotype individuals, and compute divergence statistics. Data from Hohenlohe et al. 2010 (SRA SRR034310).",
+    "task_prompt": "Analyze RADseq data from 16 threespine stickleback individuals (8 freshwater Bear Paw, 8 oceanic Rabbit Slough) multiplexed in a single FASTQ file. A barcode file and population map are provided in reference/. Demultiplex the reads using the barcodes, build per-sample loci de novo, create a shared catalog, genotype all individuals, and compute genetic divergence metrics including allele frequency differentiation between the two groups. Export variant calls and structure data. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\ntotal_reads,8895289\nretained_reads,7799884\nsamples_demultiplexed,16\ncatalog_loci,45492\nloci_passing_filters,8741\ntotal_sites,279712\nvariant_sites,2470\nsamples_in_vcf,16\nstructure_loci,2470\nmean_fst,0.1219\npi_bear_paw,0.14806\npi_rabbit_slough,0.22022\nnum_groups,2</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/radseq-popgen/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/radseq-popgen/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/radseq-popgen/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
