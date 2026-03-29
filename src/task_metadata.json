@@ -842,5 +842,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "somatic-variant-calling",
+    "name": "Somatic Variant Calling: Tumor-Normal Paired Analysis",
+    "description": "This task performs somatic variant calling from paired tumor-normal whole-genome sequencing data. The data consists of multi-lane paired-end Illumina reads from a tumor sample (6 lanes) and a matched normal sample (5 lanes), aligned to a small GRCh37 reference (chromosomes 1-3, 8, 11, X subsets). Reference files including a genome FASTA, known variant sites (dbSNP, known indels, population frequencies), and target intervals are provided in reference/. The goal is to preprocess both samples through alignment and quality recalibration, call somatic variants using multiple independent approaches, filter the results, compute coverage statistics, and annotate variants.",
+    "task_prompt": "Call somatic variants from paired tumor-normal sequencing data. Multi-lane paired-end FASTQ files are in data/tumor/ and data/normal/. A reference genome with indexes, known variant databases (dbSNP, known indels, population frequencies), and target intervals are in reference/. For each sample: quality-filter reads, align to reference with read groups, mark duplicates, and recalibrate base quality scores using the known sites. Then call somatic variants using at least three independent approaches, filter the calls, compute coverage statistics for both samples, and annotate variants with the known variant database. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntumor_input_reads,5544\ntumor_qc_reads,4654\nnormal_input_reads,5522\nnormal_qc_reads,4602\ntumor_duplication_rate,0.0615\nnormal_duplication_rate,0.0356\ntumor_mean_coverage,2.14\nnormal_mean_coverage,2.19\ncaller1_raw_variants,12\ncaller1_pass_variants,5\ncaller2_raw_variants,171\ncaller3_raw_variants,35\ncallers_used,3\nannotated_variants_caller1,5\nannotated_variants_caller2,180\nannotated_variants_caller3,35\nestimated_contamination,0.0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/somatic-variant-calling/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/somatic-variant-calling/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/somatic-variant-calling/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
