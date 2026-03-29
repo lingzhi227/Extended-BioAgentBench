@@ -1,0 +1,17 @@
+name: amplicon-microbiome
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.10,<3.13
+  - cutadapt>=4.0
+  - mafft>=7.0
+  - fasttree>=2.1
+  - picrust2>=2.5
+  - biom-format
+  - bioconductor-dada2
+  - bioconductor-phyloseq
+  - r-base>=4.0
+  - r-ape
+  - r-vegan

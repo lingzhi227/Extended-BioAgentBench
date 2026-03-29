@@ -717,5 +717,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "amplicon-microbiome",
+    "name": "16S Amplicon Microbiome: Community Profiling and Functional Prediction",
+    "description": "This task analyzes 16S rRNA amplicon sequencing data from four paired-end samples representing two treatment groups (control and treated) at two sites. The V4 region was amplified with primers 515F (GTGYCAGCMGCCGCGGTAA) and 806R (GGACTACNVGGGTWTCTAAT). A SILVA 138.1 taxonomy reference database is provided in the reference/ directory. Sample metadata including treatment group and site information is in data/metadata.tsv. The goal is to perform a complete microbiome analysis: remove primers, denoise reads to identify sequence variants, assign taxonomy, build a phylogenetic tree, predict functional potential, calculate diversity metrics, and test for differentially abundant taxa between treatment groups.",
+    "task_prompt": "Analyze 16S rRNA amplicon sequencing data from four paired-end samples. Remove primer sequences (forward: GTGYCAGCMGCCGCGGTAA, reverse: GGACTACNVGGGTWTCTAAT), denoise to identify sequence variants, assign taxonomy using the reference database in reference/, construct a phylogenetic tree from the sequence variants, predict functional pathways, calculate alpha diversity (Shannon, Simpson, observed richness, phylogenetic diversity) and beta diversity, and test for differentially abundant taxa between treatment groups defined in data/metadata.tsv. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntotal_samples,4\ntotal_input_reads,8704\ntotal_filtered_reads,7528\ntotal_sequence_variants,365\nchimeras_removed,0\nclassified_variants,337\ntop_phylum,Patescibacteria\ntop_phylum_pct,27\nmean_shannon,3.9849\nmean_simpson,0.9585\nmean_observed_richness,115\nmean_phylogenetic_diversity,17.8772\npredicted_pathways,483\ndifferentially_abundant_features,0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/amplicon-microbiome/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/amplicon-microbiome/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/amplicon-microbiome/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
