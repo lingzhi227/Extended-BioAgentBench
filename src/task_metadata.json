@@ -1300,5 +1300,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "genome-scaffolding",
+    "name": "Long-Read Genome Scaffolding of Fragmented Assembly",
+    "description": "Genome scaffolding improves assembly contiguity by ordering and orienting contigs using long-range information from long reads. This task involves scaffolding a fragmented short-read E. coli K-12 assembly (~116 contigs) using Oxford Nanopore long reads through multiple approaches: reference-guided scaffolding, long-read linkage-based scaffolding, and minimizer-based scaffolding. The pipeline compares results, selects the best scaffolder, and performs comprehensive quality assessment including gene completeness, read mapping, gap analysis, and improvement quantification.",
+    "task_prompt": "Scaffold a fragmented short-read bacterial assembly using long reads. The data/ directory contains contigs.fasta (a fragmented short-read assembly of E. coli K-12, ~116 contigs) and long_reads.fastq.gz (Oxford Nanopore long reads, ~50x coverage). The reference/ directory contains the complete E. coli K-12 MG1655 reference genome for comparison. Apply at least three different scaffolding approaches (reference-guided, long-read linkage-based, and minimizer-based), compare their results, select the best by contiguity, then assess the scaffold quality including completeness, mapping rate, gap analysis, and improvement over the initial assembly.\nThe output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\ninitial_num_contigs,116\ninitial_total_length,4511552\ninitial_n50,117600\ninitial_l50,13\ninitial_largest_contig,268093\ninitial_num_misassemblies,5\ninitial_genome_fraction_pct,95.915\nscaffold_num_contigs,39\nscaffold_total_length,4519252\nscaffold_n50,4490464\nscaffold_l50,1\nscaffold_largest_contig,4490464\nscaffold_num_misassemblies,5\nscaffold_genome_fraction_pct,95.957\nscaffolder_ragtag_n50,4490464\nscaffolder_ragtag_sequences,39\nscaffolder_links_n50,178122\nscaffolder_links_sequences,80\nscaffolder_ntlink_n50,454565\nscaffolder_ntlink_sequences,82\nmapped_reads,115474\nmapping_rate_pct,97.34\ninitial_gap_count,0\ninitial_n_bases,0\nscaffold_gap_count,77\nscaffold_n_bases,7700\nn50_fold_improvement,38.2\nsequence_count_reduction_pct,66.4\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/genome-scaffolding/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/genome-scaffolding/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/genome-scaffolding/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

@@ -1,0 +1,18 @@
+name: genome-scaffolding
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - minimap2
+  - ragtag
+  - links
+  - ntlink
+  - abyss
+  - quast
+  - busco
+  - samtools
+  - bedtools
+  - seqkit
+  - pandas
