@@ -1,0 +1,18 @@
+name: methylation-array-epic
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - r-base
+  - bioconductor-minfi
+  - bioconductor-limma
+  - bioconductor-dmrcate
+  - bioconductor-missmethyl
+  - bioconductor-gviz
+  - bioconductor-illuminahumanmethylationepicmanifest
+  - r-ggplot2
+  - python=3.10
+  - pandas
+  - matplotlib
+  - samtools

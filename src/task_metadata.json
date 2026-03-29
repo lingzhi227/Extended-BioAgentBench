@@ -1762,5 +1762,26 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "methylation-array-epic",
+    "name": "Methylation Array Analysis (Illumina EPIC)",
+    "description": "Illumina EPIC methylation array analysis processes raw IDAT files through normalization, quality control, differential methylation detection, and pathway enrichment. Key challenges include handling two probe types (Type I and II) with different dynamic ranges, filtering failed and cross-reactive probes, correcting for batch effects without removing biological signal, detecting differentially methylated regions from CpG-level statistics, and correcting for the gene-length bias inherent in array-based GO enrichment analysis.",
+    "task_prompt": "Analyze Illumina EPIC methylation array data for differential methylation analysis. Raw IDAT files (Red and Green channels) are in data/idat/ with subdirectories per sample, and a sample sheet is at data/idat/SampleSheet.csv. Read the raw intensity data, compute detection p-values to identify failed probes, perform probe-level quality control, normalize the data using background correction methods, check sample quality (including sex prediction from X/Y probe intensities), perform principal component analysis to assess batch effects, run differential methylation analysis at the CpG level (differentially methylated positions), detect differentially methylated regions, perform gene ontology and pathway enrichment analysis (correcting for the probe number bias inherent in array-based methylation studies), and generate visualization plots. The output should be a CSV file at results/report.csv with columns: metric,value.\n<example>\nmetric,value\nnum_samples,3\narray_type,EPIC\ntotal_probes,1052641\nprobes_passing_qc,864782\nprobes_failing_qc,2054\nprobe_pass_rate,99.76\nnormalized_probes,864782\nmean_beta_sample1,0.4549\nmean_beta_sample2,0.4614\nmean_beta_sample3,0.4594\npca_pc1_variance,53\npca_pc2_variance,47\ntotal_dmps_tested,864782\nsignificant_dmps,6\ntop_dmp_cpg,cg18899802\ntop_dmp_pvalue,3.04e-10\ntop_dmp_logfc,-6.1065\nnum_dmrs,0\nsignificant_go_terms,0\nsignificant_kegg_pathways,0\npredicted_sex,F;F;F\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/methylation-array-epic/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/methylation-array-epic/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
