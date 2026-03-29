@@ -2,20 +2,10 @@ name: circrna-detection
 channels:
   - bioconda
   - conda-forge
-  - defaults
 dependencies:
   - trim-galore
   - star
-  - circexplorer2
-  - ciriquant
   - samtools
+  - circexplorer2
   - bedtools
-  - miranda
-  - rnahybrid
-  - bwa
-  - hisat2
-  - stringtie
-  - multiqc
-  - python>=3.9
-  - pandas
-  - numpy
+  - subread
