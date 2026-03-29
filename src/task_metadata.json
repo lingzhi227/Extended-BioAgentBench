@@ -1684,5 +1684,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "msi-detection",
+    "name": "Microsatellite Instability Detection: Multi-Caller Consensus Analysis",
+    "description": "This task analyzes a tumor-normal BAM pair to detect microsatellite instability (MSI), a biomarker for deficient DNA mismatch repair. Three independent MSI callers are run on the same data, their results are parsed and compared, and a consensus MSI status is determined by majority vote. The pipeline also calls variants at MSI loci, computes coverage depth, and estimates tumor mutation burden (TMB). The data is from the msisensor-pro project demo dataset (synthetic tumor-normal pair on a 1.5 Mb chr1 reference).",
+    "task_prompt": "Detect microsatellite instability (MSI) in a tumor-normal BAM pair using three independent callers, then compute a consensus MSI status by majority vote. Also call variants at microsatellite loci, compute coverage depth at those loci, and estimate tumor mutation burden (TMB). Tumor and normal BAMs with a reference genome are provided in data/ and reference/ directories. A pre-cloned third-party MSI caller repository is available under outputs/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntumor_total_reads,84535\ntumor_mapped_pct,99.96\nnormal_total_reads,167071\nnormal_mapped_pct,99.96\ncaller1_msi_score,0.0\ncaller1_total_sites,12\ncaller1_unstable_sites,0\ncaller2_msi_score,14.29\ncaller2_total_sites,7\ncaller2_unstable_sites,1\ncaller3_msi_score,9.78\ncaller3_step_wise_diff,0.0978\ncaller3_loci_analyzed,1\nconsensus_msi_status,MSS\nconsensus_msi_score,8.0233\nmsi_callers_agree,1/3\ntumor_mean_coverage,1.98\nnormal_mean_coverage,3.6\nvariants_in_msi_loci,156\ntmb_per_mb,104.0\ncallable_region_mb,1.5\ntmb_status,TMB-High</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/msi-detection/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/msi-detection/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/msi-detection/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

@@ -1,0 +1,21 @@
+name: msi-detection
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - msisensor-pro
+  - msisensor2
+  - samtools
+  - bcftools
+  - mosdepth
+  - bedtools
+  - gatk4
+  - pandas
+  - matplotlib
+  - multiqc
+  - numpy
+  - pysam
+  - pip:
+    - git+https://github.com/OSU-SRLab/MANTIS.git
