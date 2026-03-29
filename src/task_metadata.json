@@ -993,5 +993,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "neoantigen-prediction",
+    "name": "Neoantigen Prediction: Tumor-Normal Somatic Analysis",
+    "description": "This task performs tumor-normal paired somatic variant analysis on human exome sequencing data. Paired-end FASTQ files are provided for both a tumor and matched normal sample, along with a chr22 reference genome. The goal is to align reads, mark duplicates, assess coverage, call somatic variants from the tumor-normal pair, call germline variants from the normal sample, filter variants, and produce a summary report with alignment QC, coverage, variant counts, and mutation types.",
+    "task_prompt": "Perform somatic and germline variant analysis from paired tumor-normal sequencing data. The data/ directory contains paired-end FASTQ files for a tumor sample (tumor_R1.fastq.gz, tumor_R2.fastq.gz) and a matched normal sample (normal_R1.fastq.gz, normal_R2.fastq.gz). The reference/ directory contains a chr22 reference genome (genome.fa) with index files. Align both samples to the reference, mark duplicates, compute coverage statistics, call somatic variants using the tumor-normal pair, call germline variants from the normal sample, filter variants, and report alignment quality, coverage, duplicate rates, and variant counts. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntumor_input_reads,266736\nnormal_input_reads,267721\ntumor_mapped_reads,3882\nnormal_mapped_reads,3610\ntumor_mean_coverage,9.4\nnormal_mean_coverage,9.4\ntumor_duplicate_pct,38.51\nnormal_duplicate_pct,36.98\nsomatic_variants_raw,0\nsomatic_variants_pass,0\ngermline_variants,55\ngermline_snps,54\ngermline_indels,1\nvariant_calling_mode,paired_tumor_normal</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/neoantigen-prediction/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/neoantigen-prediction/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/neoantigen-prediction/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
