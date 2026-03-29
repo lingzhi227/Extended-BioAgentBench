@@ -1,0 +1,17 @@
+name: gwas-association
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - plink2
+  - plink
+  - regenie
+  - bcftools
+  - bedtools
+  - r-qqman
+  - samtools
+  - python>=3.9
+  - scipy
+  - pandas
+  - numpy

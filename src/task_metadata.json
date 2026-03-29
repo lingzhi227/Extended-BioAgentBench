@@ -1586,5 +1586,25 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "gwas-association",
+    "name": "GWAS Population Association Testing",
+    "description": "Perform genome-wide association testing on genotype array data including quality control, population stratification correction via principal component analysis, association testing with multiple statistical methods, and result annotation. GWAS identifies genetic variants associated with a trait by testing each variant for statistical association with the phenotype while controlling for confounders. The input includes genotype data in standard binary format (BED/BIM/FAM), a binary phenotype file, and covariates.",
+    "task_prompt": "Perform a genome-wide association study on genotype data. The input genotypes (binary BED/BIM/FAM format), phenotype file (phenotype_bin.txt with Y1/Y2 binary traits, coded 0=control 1=case), and covariates (covariates.txt) are in data/. Perform genotype QC (missingness, MAF, HWE filtering), LD pruning, PCA for population stratification, heterozygosity-based outlier removal, and run at least two association methods (logistic regression with PCA covariates and a whole-genome regression approach). Compute genomic inflation factor (lambda GC), identify significant and suggestive loci, and perform LD clumping. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\nvariants_after_qc,1000\nsamples_after_qc,499\npca_computed_samples,500\nld_pruned_snps,1000\nmean_het_f,-0.002\nmethod1_tested_variants,1000\nmethod1_genome_wide_sig,0\nmethod1_suggestive_sig,0\nmethod1_min_pvalue,7.96e-04\ngenomic_inflation_lambda,1.1222\nmethod2_tested_variants,1000\nmethod2_suggestive_sig,0\nclumped_loci,0\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/gwas-association/data.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/gwas-association/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
