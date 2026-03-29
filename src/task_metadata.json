@@ -1482,5 +1482,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "cnv-detection-wes",
+    "name": "CNV Detection from Whole-Exome Sequencing",
+    "description": "Detect copy number variants from whole-exome sequencing data using multiple CNV callers, merge calls, and assess concordance. Copy number variants (CNVs) are genomic segments that differ in copy number from the diploid reference. WES-based CNV detection requires paired tumor-normal analysis with specialized callers that account for the non-uniform capture efficiency across exome targets. The input includes paired-end reads for both tumor and normal samples, a reference genome (chr20), and an exome target intervals BED file.",
+    "task_prompt": "Detect copy number variants from paired tumor-normal whole-exome sequencing data. The input reads for tumor and normal samples are in data/ and the reference genome with exome target intervals are in reference/. Process both samples through quality trimming, alignment, duplicate marking, and coverage calculation. Run at least two independent CNV detection methods on the paired tumor-normal BAMs using the target intervals, merge their results, and compute summary statistics. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\ntumor_reads,4319\ntumor_reads_after_trim,4164\nnormal_reads,435\nnormal_reads_after_trim,408\ntumor_mean_coverage,0.0\nnormal_mean_coverage,0.0\ntumor_dup_pct,14.63\nnormal_dup_pct,0.0\ncnvkit_cnv_count,0\nfreec_cnv_count,0\ngatk_cnv_count,0\ntotal_callers_run,3\ntotal_merged_cnvs,0\ntarget_intervals,1000\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/cnv-detection-wes/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/cnv-detection-wes/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/cnv-detection-wes/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
