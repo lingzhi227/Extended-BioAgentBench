@@ -1,10 +1,11 @@
 
 > **WARNING: COLLISION ALERT** (added by Session A)
-> These task IDs already exist from the CANDIDATES phase. Sessions F-J MUST SKIP them:
-> - `circrna-detection` — ALREADY BUILT (skip in Session F)
-> - `dda-lfq-proteomics` — ALREADY BUILT (skip in Session I)
-> - `mag-recovery` — ALREADY BUILT (skip in Session H)
-> - `immune-repertoire` — BLOCKED by NCBI FTP (Session F should try, but may fail)
+> These task IDs already exist as SIMPLER versions from earlier phases.
+> Sessions F-J should build the GOLD complex versions with DIFFERENT task IDs:
+> - `circrna-detection` exists (simple, 1 BSJ caller) → build GOLD version as `circrna-multi-caller`
+> - `dda-lfq-proteomics` exists (2 versions) → build GOLD version as `dda-proteomics-dual-engine`
+> - `mag-recovery` exists (simple) → build GOLD version as `mag-hybrid-recovery`
+> - `immune-repertoire` does not exist yet → build as-is
 
 # 25 GOLD Bioinformatics Benchmark Task Designs
 
