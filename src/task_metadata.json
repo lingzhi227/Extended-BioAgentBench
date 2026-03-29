@@ -1196,5 +1196,83 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "metatranscriptomics",
+    "name": "Metatranscriptomics: Active Microbial Community Profiling",
+    "description": "This task analyzes metatranscriptomic data from a gut microbiome sample (HMP2, SRR6820516). Paired-end Illumina reads (150bp, ~260K pairs) capture both ribosomal RNA and messenger RNA from the active microbial community. The goal is to separate rRNA from mRNA, assemble transcripts de novo, predict and annotate genes, quantify expression, and compute diversity metrics. This workflow requires integrating quality control, rRNA removal, de novo assembly, gene prediction, functional annotation, read mapping, and ecological statistics.",
+    "task_prompt": "Analyze metatranscriptomic paired-end reads to profile active microbial community composition and functional gene expression. The data/ directory contains paired FASTQ files (reads_R1.fastq.gz and reads_R2.fastq.gz) from a gut microbiome. The reference/ directory contains rRNA sequence databases (in rrna_db/) and a protein database (uniprot_sprot.fasta.gz) for functional annotation. Quality-filter the reads, separate ribosomal RNA reads from messenger RNA reads, assemble the non-rRNA fraction into transcripts, predict genes, annotate them functionally against the protein database, quantify gene expression by mapping reads back to the assembly, and compute community diversity metrics from the taxonomic composition of annotated genes. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\ntotal_reads_before,521108\ntotal_reads_after,497272\nq30_rate_before,91.49\nq30_rate_after,93.44\nrrna_reads,105662\nrrna_pct,21.17\nnonrrna_reads,393396\ntotal_contigs,2468\nassembly_length,1948243\nlargest_contig,12392\nassembly_gc_pct,41.77\nassembly_n50,982\npredicted_genes,3538\nannotated_genes,2308\nmapped_reads,353506\nmapping_pct,89.86\nexpressed_genes,3337\nhighly_expressed_genes,100\nshannon_diversity,2.1974\nsimpson_diversity,0.8112\nobserved_richness,20\nchao1_estimate,20.0\ntop_organism,Acetivibrio thermocellus (strain ATCC 27405 / DSM 1237 / JCM 9322 / NBRC 103400 / NCIMB 10682 / NRRL B-4536 / VPI 7372)\ntop_organism_pct,30.33\ntop_function,Elongation factor G\nfunctional_categories,9</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/metatranscriptomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/metatranscriptomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/metatranscriptomics/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "nascent-transcription",
+    "name": "Nascent Transcription: GRO-seq Polymerase Activity Profiling",
+    "description": "Nascent transcription profiling captures RNA polymerase activity genome-wide, revealing active transcription start sites, enhancers, and gene body transcription in real-time. This task involves analyzing GRO-seq data from two human cell types (CD4+ T-cells and Jurkat) mapped to chromosome 21. The analysis requires ribosomal RNA depletion before genome alignment, strand-specific signal separation, peak detection for transcription initiation sites and transcribed regions, TSS profiling, and genomic annotation of detected features.",
+    "task_prompt": "Analyze GRO-seq nascent transcription data from two conditions (CD4+ T-cells and Jurkat). For each condition, merge the replicate FASTQ files, perform read quality control, remove ribosomal RNA contamination, align to the chromosome 21 reference genome (single-end, no intron spanning), deduplicate, and compute alignment statistics. For the CD4+ condition, generate strand-specific genome coverage tracks (plus and minus strand separately), convert to signal tracks, detect transcription start site peaks and transcribed region peaks, create a TSS-centered signal profile heatmap, annotate peaks with nearby genes, and classify transcribed regions as genic or intergenic. The output should be a CSV file with columns: 'metric','value'.\n<example>\nmetric,value\ncd4_raw_reads,99020\ncd4_clean_reads,98318\ncd4_q30_rate,95.81\ncd4_rrna_rate,21.78\ncd4_non_rrna_reads,76901\ncd4_uniquely_mapped_reads,33350\ncd4_unique_mapping_rate,43.37\ncd4_dedup_reads,30797\njurkat_raw_reads,99020\njurkat_clean_reads,97944\njurkat_q30_rate,95.94\njurkat_rrna_rate,47.09\njurkat_non_rrna_reads,51827\njurkat_uniquely_mapped_reads,21664\njurkat_unique_mapping_rate,41.80\njurkat_dedup_reads,18379\ntss_peaks,583\ntranscription_unit_peaks,5\ngenic_peaks,3\nintergenic_peaks,2\nplus_strand_coverage_regions,17710\nminus_strand_coverage_regions,19556\nannotated_peaks,583\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/nascent-transcription/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/nascent-transcription/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/nascent-transcription/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "circrna-discovery",
+    "name": "Circular RNA Discovery: C. elegans Wild-type vs fust-1 Mutant",
+    "description": "This task analyzes paired-end RNA-seq data to discover circular RNAs (circRNAs) in C. elegans. Four samples from two conditions (wild-type N2 and fust-1 mutant, 2 replicates each) are provided as paired-end FASTQ files, subset to chromosome I only. A reference genome (chrI.fa), gene annotation (chrI.gtf), and gene prediction file (chrI.txt) are included. The goal is to detect back-splice junctions characteristic of circular RNA molecules, quantify them across samples, and characterize the detected circRNAs. Data from nf-core/circrna test dataset (SRA SRX9313375-SRX9313380).",
+    "task_prompt": "Detect circular RNAs from paired-end RNA-seq data of C. elegans chromosome I. Four paired-end FASTQ samples (2 wild-type N2, 2 fust-1 mutant) are in data/. A chromosome I reference genome, gene annotation (GTF), and gene prediction file are in reference/. Trim adapters, align reads to detect chimeric back-splice junctions, identify circular RNA candidates, quantify back-splice junction read counts, and characterize the detected circular RNAs by length and genomic distribution. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\nsamples_analyzed,4\ntotal_circular_rnas,134\nshared_by_multiple_tools,0\ntotal_back_splice_reads,765\nmean_circrna_length,1852\nmin_circrna_length,192\nmax_circrna_length,15586\ndetection_tools_used,2\nchromosomes_with_circrnas,1\nn2_samples,2\nfust1_samples,2</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/circrna-discovery/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/circrna-discovery/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/circrna-discovery/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

@@ -1,0 +1,15 @@
+name: circrna-discovery
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - star=2.7.11b
+  - trim-galore
+  - circexplorer2
+  - dcc
+  - samtools
+  - bedtools
+  - bioconductor-deseq2
+  - python=3.10
+  - r-base
