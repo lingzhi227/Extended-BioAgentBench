@@ -1,0 +1,14 @@
+name: lcms-metabolomics
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bioconductor-xcms=4.8.0
+  - bioconductor-camera=1.66.0
+  - bioconductor-msnbase=2.36.0
+  - r-base=4.4
+  - python=3.11
+  - matchms=0.31.0
+  - pandas
+  - numpy

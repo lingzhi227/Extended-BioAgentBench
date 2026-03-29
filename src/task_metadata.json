@@ -821,5 +821,26 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "lcms-metabolomics",
+    "name": "LC-MS Untargeted Metabolomics: Urine Feature Discovery",
+    "description": "This task performs untargeted metabolomics analysis on LC-MS data from human urine samples acquired on an LTQ-Orbitrap in negative ionization mode. Twelve mzML files represent three sample types: 6 study samples (3 male, 3 female), 3 pooled quality control (QC) samples, and 3 blank controls. A sample metadata file provides sample type, gender, age, BMI, injection order, and batch information. The goal is to detect chromatographic peaks, align retention times, group features, apply QC-based and blank-subtraction filters, annotate isotopes and adducts, perform statistical comparison between groups, and produce a comprehensive quality and discovery report.",
+    "task_prompt": "Analyze LC-MS untargeted metabolomics data from human urine. The data/ directory contains 12 mzML files: 6 study samples (HU_neg_*), 3 QC pool samples (QC1_*), and 3 blank controls (Blanc*), plus a sampleMetadata.tsv with sample type, gender, age, BMI, injection order, and batch. Detect chromatographic peaks across all samples, align retention times, group features, fill missing values, then apply quality filters: remove features dominated by blank signal and features with high coefficient of variation in QC samples. Annotate isotope patterns and adducts. Compare feature intensities between male and female subjects. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\nnum_samples,6\nnum_qc_pools,3\nnum_blanks,3\ntotal_scans,21878\nmz_range_min,50.0321\nmz_range_max,691.3176\nrt_range_min_sec,5.29\nrt_range_max_sec,1208.69\npeaks_detected,57325\nfeatures_grouped,4951\nfeatures_after_fill,4951\nfeatures_blank_removed,684\nfeatures_qc_removed,3265\nfeatures_final,1580\nisotope_annotations,1135\nadduct_annotations,1937\nputative_identifications,9\nmean_qc_cv_pct,21.75\nmedian_qc_cv_pct,23.86\nsignificant_features_fdr05,0\nsignificant_features_fdr25,0\nsignificant_annotated_features,0\ntop_feature_mz,355.1949\ntop_feature_pvalue,3.33e-04\ntop_feature_fdr,3.51e-01\ntop_feature_log2fc,2.7334\ntop_feature_annotation,unknown</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/lcms-metabolomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/lcms-metabolomics/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
