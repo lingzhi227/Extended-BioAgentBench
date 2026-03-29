@@ -1,0 +1,17 @@
+name: somatic-germline-dual
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - bwa-mem2
+  - samtools=1.21
+  - gatk4
+  - bcftools=1.21
+  - fastqc=0.12.1
+  - picard
+  - snpsift
+  - mosdepth
+  - pandas
+  - numpy

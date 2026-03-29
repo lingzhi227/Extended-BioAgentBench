@@ -1019,5 +1019,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "somatic-germline-dual",
+    "name": "Somatic+Germline Dual Analysis: Hereditary Cancer Variants",
+    "description": "This task performs dual somatic and germline variant analysis from paired tumor-normal exome sequencing data. Paired-end FASTQ files are provided for both a tumor and matched normal sample along with a chr22 reference genome. The goal is to independently call somatic variants (from the tumor-normal pair) and germline variants (from each sample separately), then intersect the variant sets to identify positions that are shared or unique to each call set. This dual-analysis approach reveals both inherited variants and acquired somatic mutations, with the intersection distinguishing germline contamination from true somatic events.",
+    "task_prompt": "Perform dual somatic and germline variant analysis from paired tumor-normal sequencing data. The data/ directory contains paired-end FASTQs for a tumor sample (tumor_R1/R2.fastq.gz) and matched normal sample (normal_R1/R2.fastq.gz). The reference/ directory contains a chr22 reference genome with index files. Align both samples, mark duplicates, compute coverage. Call somatic variants using the tumor-normal pair. Call germline variants from both samples independently. Intersect the germline call sets to find shared and sample-specific variants. Report alignment QC, coverage, duplicate rates, variant counts for somatic and germline calls, and the intersection statistics. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntumor_input_reads,266736\nnormal_input_reads,267721\ntumor_mapped_reads,3882\nnormal_mapped_reads,3610\ntumor_mean_coverage,9.4\nnormal_mean_coverage,9.4\ntumor_duplicate_pct,38.51\nnormal_duplicate_pct,36.98\nsomatic_variants,0\ngermline_variants_normal,55\ngermline_variants_tumor,70\ngermline_snps,54\ngermline_indels,1\nshared_germline_positions,18\nnormal_only_germline,37\ntumor_only_germline,52</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/somatic-germline-dual/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/somatic-germline-dual/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/somatic-germline-dual/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
