@@ -1097,5 +1097,26 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "mag-recovery",
+    "name": "MAG Recovery: Metagenome-Assembled Genomes from Environmental Sample",
+    "description": "This task recovers metagenome-assembled genomes (MAGs) from a coffee fermentation metagenome. Paired-end Illumina MiSeq reads (300bp) from a microbial community are provided. The goal is to quality-filter reads, assemble the metagenome, map reads back to contigs for coverage estimation, apply multiple independent binning algorithms, merge bins using a consensus approach, predict genes, and assess bin quality. This is a standard environmental metagenomics workflow for recovering draft genomes from complex communities.",
+    "task_prompt": "Recover metagenome-assembled genomes (MAGs) from paired-end metagenomic reads. The data/ directory contains paired FASTQ files (reads_R1.fastq.gz and reads_R2.fastq.gz) from a microbial community. Quality-filter the reads, assemble the metagenome, map reads back to assembled contigs to calculate coverage depth, then apply at least two independent binning methods to group contigs into draft genomes. Refine bins by comparing results across methods. Predict genes on assembled contigs. Report assembly quality, binning results, and per-bin statistics. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\ntotal_reads_before,2052218\ntotal_reads_after,2027938\nq30_rate_before,84.6\nq30_rate_after,85.06\ntotal_contigs,7187\ntotal_assembly_length,21672139\nlargest_contig,85618\nassembly_gc_pct,35.18\nassembly_n50,3172\nmapped_reads,570589\nmapping_pct,28.14\npredicted_genes,19285\nmetabat2_bins,4\nmaxbin2_bins,5\nrefined_bins,1\nlargest_bin_name,bin.4\nlargest_bin_length,1645295\nlargest_bin_contigs,397\nlargest_bin_n50,4922\nlargest_bin_gc_pct,39.26\ntotal_binned_length,1645295\nmean_bin_size,1645295\nmean_bin_gc_pct,39.26\ndastool_score_bin.4,0</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mag-recovery/data.tar.gz"
+        }
+      ],
+      "reference_data": [],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mag-recovery/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
