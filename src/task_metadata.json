@@ -1352,5 +1352,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "circrna-detection",
+    "name": "Circular RNA Detection and Quantification",
+    "description": "Detect and quantify circular RNAs from RNA-seq data. Circular RNAs (circRNAs) are covalently closed single-stranded RNA molecules formed by back-splicing, where a downstream splice donor joins to an upstream splice acceptor. They are detected by identifying back-splice junction (BSJ) reads in RNA-seq data. Multiple detection methods should be used and their results merged by consensus to reduce false positives. Downstream analysis includes extracting circRNA sequences, computing back-splice junction read counts, and predicting potential microRNA binding sites on circRNA sequences. The input is paired-end RNA-seq reads from a C. elegans experiment with a matching reference genome, gene annotation, and mature miRNA sequences.",
+    "task_prompt": "Detect circular RNAs from paired-end RNA-seq data. The input reads are in data/ and the reference genome, gene annotation (GTF and refFlat format), and mature miRNA sequences are in reference/. Process reads through quality trimming, alignment with chimeric read detection, and run at least two independent back-splice junction detection methods. Merge calls by consensus (supported by >= 2 methods), extract circRNA sequences, count supporting BSJ reads, and predict miRNA binding sites on the circRNA sequences. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\ntotal_reads,444124\nadapter_pct,14.5\nunique_map_pct,98.59\nchimeric_reads,1004\ntotal_alignments,896302\ncaller1_count,47\ncaller2_count,92\ncaller3_count,86\nconsensus_count,33\ntotal_bsj_reads,149\nmax_bsj_reads,41\nmean_bsj_reads,4.52\nextracted_sequences,33\nmean_length,2336\nmiranda_targets,388\nrnahybrid_targets,19682\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/circrna-detection/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/circrna-detection/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/circrna-detection/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
