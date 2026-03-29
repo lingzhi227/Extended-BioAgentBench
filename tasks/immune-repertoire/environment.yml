@@ -1,0 +1,22 @@
+name: immune-repertoire
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - fastp
+  - presto
+  - changeo
+  - igblast
+  - r-shazam
+  - r-tigger
+  - r-scoper
+  - r-dowser
+  - r-alakazam
+  - samtools
+  - python>=3.9
+  - pandas
+  - numpy
+  - pip
+  - pip:
+    - receptor_utils

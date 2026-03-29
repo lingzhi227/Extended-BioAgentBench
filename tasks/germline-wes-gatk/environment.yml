@@ -1,0 +1,17 @@
+name: germline-wes-gatk
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bwa-mem2
+  - samtools
+  - picard
+  - gatk4
+  - mosdepth
+  - bcftools
+  - snpsift
+  - bedtools
+  - multiqc
+  - pandas
+  - python=3.11

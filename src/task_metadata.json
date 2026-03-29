@@ -1534,5 +1534,57 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "immune-repertoire",
+    "name": "Immune Repertoire Analysis (BCR-seq)",
+    "description": "Analyze B cell receptor sequencing data to characterize the adaptive immune repertoire. BCR-seq captures immunoglobulin heavy chain sequences including variable (V), diversity (D), and joining (J) gene segments, along with the complementarity-determining region 3 (CDR3) that determines antigen specificity. The analysis involves quality filtering, paired-end assembly, V(D)J gene annotation against germline reference databases, and downstream characterization including gene usage profiling, CDR3 length distribution, somatic hypermutation rates, clonal diversity estimation, and clone identification. The input includes paired-end BCR sequencing reads with UMI barcodes (I1 file) and germline reference sequences.",
+    "task_prompt": "Analyze B cell receptor sequencing data to characterize the immune repertoire. The input reads (R1, R2, and I1 UMI barcode files) are in data/ and germline V/D/J reference sequences are in reference/. Process reads through quality trimming, paired-end assembly, V(D)J gene annotation, and compute repertoire metrics including gene usage, CDR3 statistics, mutation rates, diversity indices, and clone estimates. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\ntotal_read_pairs,2500\nreads_after_trim,2272\nassembled_sequences,2292\ntotal_annotated,2272\nproductive_count,1795\nproductive_pct,79.01\nunique_v_genes,154\nunique_j_genes,21\ntop_v_gene,IGHV5-51*01\ntop_v_count,180\nmean_cdr3_length,45.1\nmedian_cdr3_length,42\nmean_mutation_pct,8.3\nv_gene_shannon_diversity,4.051\nestimated_clones,1256\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/immune-repertoire/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/immune-repertoire/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/immune-repertoire/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "germline-wes-gatk",
+    "name": "Germline WES Variant Calling: Clinical Exome Analysis",
+    "description": "Germline variant calling from whole-exome sequencing (WES) data following clinical best practices. This task involves processing paired-end WES reads from a human sample (chromosome 7 subset), including quality control, alignment to the reference genome, duplicate marking, base quality score recalibration using known variant sites, variant calling with multiple approaches, separate SNP and indel filtering, variant normalization, transition/transversion ratio calculation, coverage analysis, and clinical annotation against a pathogenicity database.",
+    "task_prompt": "Call germline variants from whole-exome sequencing data following clinical best practices. The data/ directory contains paired-end FASTQ files (sample_R1.fastq.gz, sample_R2.fastq.gz) from a human exome capture experiment. The reference/ directory contains the genome reference (genome.fa), gene annotation (genes.gtf), known variant sites for base quality recalibration (dbsnp.vcf.gz), a clinical pathogenicity database (clinvar.vcf.gz), and exome target regions (exome_targets.bed, exome_targets_padded.bed). Quality-filter the reads, align to the reference with proper read group information, sort, mark duplicates, and recalibrate base qualities using known sites. Compute coverage statistics. Call variants using both a genotype likelihood model and a pileup-based approach, normalize variants, then separate SNPs and indels for independent quality filtering. Merge filtered variants, compute summary statistics (transition/transversion ratio, heterozygous/homozygous counts), and annotate against the pathogenicity database. The output should be a CSV file with columns: 'metric','value'.\n<example>\nmetric,value\nraw_reads,1000000\nclean_reads,972846\nq30_rate,94.49\nmapped_reads,169419\nmapping_rate,17.34\nduplication_rate,0.28\nmean_coverage,0.22\ntotal_variants,416\nsnp_count,313\nindel_count,103\ngatk_variants,0\nti_tv_ratio,1.98\nhet_count,24\nhom_count,392\nhet_hom_ratio,0.06\nclinvar_annotated,0\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/germline-wes-gatk/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/germline-wes-gatk/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/germline-wes-gatk/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
