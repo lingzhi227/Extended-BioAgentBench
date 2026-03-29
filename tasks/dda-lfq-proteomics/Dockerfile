@@ -1,7 +1,6 @@
-FROM condaforge/mambaforge:24.9.2-0
-WORKDIR /app
-COPY run_script.sh /app/
-COPY environment.yml /app/
-RUN mamba init bash && . ~/.bashrc && mamba env create -f environment.yml && chmod +x /app/run_script.sh
-SHELL ["/bin/bash", "--login", "-c"]
-CMD ["/app/run_script.sh"]
+FROM mambaorg/micromamba:1.5.1
+COPY environment.yml /tmp/environment.yml
+RUN micromamba create -n env -f /tmp/environment.yml -y && micromamba clean -a -y
+ENV PATH="/opt/conda/envs/env/bin:$PATH"
+WORKDIR /workspace
+COPY run_script.sh /workspace/

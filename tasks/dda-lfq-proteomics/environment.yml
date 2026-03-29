@@ -2,7 +2,14 @@ name: dda-lfq-proteomics
 channels:
   - bioconda
   - conda-forge
+  - defaults
 dependencies:
+  - python=3.11
   - openms
   - comet-ms
+  - msgf_plus
   - percolator
+  - thermorawfileparser
+  - pyopenms
+  - samtools
+  - pandas

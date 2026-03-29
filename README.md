@@ -80,16 +80,16 @@ Building on [BioAgentBench](https://arxiv.org/abs/2601.21800) (10 tasks), this b
 | 63 | `longread-rna-isoform` | Long-Read RNA Isoform Discovery from Direct RNA Sequenc |
 | 64 | `circrna-detection` | Circular RNA Detection and Quantification |
 | 65 | `pharmacogenomics` | CYP2D6 Pharmacogenomic Star Allele Calling |
-| 66 | `dda-lfq-proteomics` | DDA-LFQ Proteomics: 18-Protein Mixture Label-Free Quant |
-| 67 | `rna-editing-detection` | RNA Editing Detection: A-to-I Editing from Matched RNA/ |
-| 68 | `cnv-detection-wes` | CNV Detection from Whole-Exome Sequencing |
-| 69 | `haplotype-phasing` | Haplotype Phasing and Genotype Refinement |
-| 70 | `dda-proteomics-simple` | DDA Proteomics: Single-Engine BSA Identification |
-| 71 | `immune-repertoire` | Immune Repertoire Analysis (BCR-seq) |
-| 72 | `germline-wes-gatk` | Germline WES Variant Calling: Clinical Exome Analysis |
-| 73 | `gwas-association` | GWAS Population Association Testing |
-| 74 | `dia-proteomics` | Label-Free Proteomics: BSA Standard Identification |
-| 75 | `structural-variant-multi` | Structural Variant Detection: Multi-caller Human SV Ana |
+| 66 | `rna-editing-detection` | RNA Editing Detection: A-to-I Editing from Matched RNA/ |
+| 67 | `cnv-detection-wes` | CNV Detection from Whole-Exome Sequencing |
+| 68 | `haplotype-phasing` | Haplotype Phasing and Genotype Refinement |
+| 69 | `dda-proteomics-simple` | DDA Proteomics: Single-Engine BSA Identification |
+| 70 | `immune-repertoire` | Immune Repertoire Analysis (BCR-seq) |
+| 71 | `germline-wes-gatk` | Germline WES Variant Calling: Clinical Exome Analysis |
+| 72 | `gwas-association` | GWAS Population Association Testing |
+| 73 | `dia-proteomics` | Label-Free Proteomics: BSA Standard Identification |
+| 74 | `structural-variant-multi` | Structural Variant Detection: Multi-caller Human SV Ana |
+| 75 | `dda-lfq-proteomics` | DDA Label-Free Quantitative Proteomics |
 
 ## Quick start
 

@@ -1380,32 +1380,6 @@
     }
   },
   {
-    "task_id": "dda-lfq-proteomics",
-    "name": "DDA-LFQ Proteomics: 18-Protein Mixture Label-Free Quantification",
-    "description": "This task analyzes DDA (data-dependent acquisition) label-free quantification proteomics data from an 18-protein BSA mixture study. Six mzML files are provided (3 biological replicates x 2 fractions) along with a FASTA database containing target and decoy sequences from Sorangium cellulosum. The goal is to centroid mass spectra, search them against the database using appropriate search engines, score peptide-spectrum matches and control false discovery rate, then quantify proteins across samples. Data from nf-core/quantms test dataset.",
-    "task_prompt": "Perform label-free protein quantification from DDA (data-dependent acquisition) mass spectrometry data. Six mzML files are provided in data/ (3 biological replicates x 2 fractions each) from an 18-protein BSA mixture. A FASTA protein database with target and decoy sequences is in reference/ along with an experimental design file. Centroid the spectra, search against the database, score peptide-spectrum matches, control false discovery rate, and quantify identified proteins across samples. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\nmzml_files_processed,6\ntotal_psms,2165\nunique_peptides,1774\ntarget_proteins,873\ndecoy_proteins,811\nfdr_method,semi-supervised_scoring\nsamples,3\nfractions_per_sample,2</example>",
-    "download_urls": {
-      "data": [
-        {
-          "filename": "data.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/data.tar.gz"
-        }
-      ],
-      "reference_data": [
-        {
-          "filename": "reference.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/reference.tar.gz"
-        }
-      ],
-      "results": [
-        {
-          "filename": "results.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/results.tar.gz"
-        }
-      ]
-    }
-  },
-  {
     "task_id": "rna-editing-detection",
     "name": "RNA Editing Detection: A-to-I Editing from Matched RNA/DNA Sequencing",
     "description": "RNA editing is a post-transcriptional modification where adenosine is converted to inosine (A-to-I) by ADAR enzymes, which is read as guanosine by the sequencing machinery. This task detects A-to-I editing events from matched RNA-seq and DNA-seq (whole exome) data from a human cancer sample (chromosome 7 subset). The analysis requires independent preprocessing of RNA and DNA reads with different alignment strategies, multiple variant callers to identify RNA-specific variants, consensus filtering, strand-aware base change classification, known SNP removal, and repeat region annotation to distinguish true editing from genomic variation.",
@@ -1629,6 +1603,32 @@
         {
           "filename": "results.tar.gz",
           "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/structural-variant-multi/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "dda-lfq-proteomics",
+    "name": "DDA Label-Free Quantitative Proteomics",
+    "description": "Label-free quantitative proteomics by DDA mass spectrometry enables unbiased protein quantification across experimental conditions. This task processes four mzML files from a Q-Exactive instrument (2 conditions x 2 replicates) through a dual search engine pipeline. The workflow includes target-decoy database generation, spectral peak picking, parallel database searching with two independent algorithms, peptide indexing, PSM feature extraction, FDR control, identification filtering, label-free quantification, and cross-engine/cross-condition comparison.",
+    "task_prompt": "Quantify proteins from data-dependent acquisition (DDA) label-free mass spectrometry data using dual search engines with FDR control. Four mzML files (two conditions, two replicates each) are in data/ along with an experimental design file. A protein sequence database is in reference/. Generate a target-decoy database, perform centroiding (peak picking), search spectra against the database using two independent search engines, index peptides, extract PSM features, control false discovery rate, filter identifications, quantify features, and compare identifications between conditions and between search engines.\nThe output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\nspectra_T2_A1,8028\nspectra_T2_B1,7939\nspectra_T7A_1,2811\nspectra_T7B_1,5762\ntotal_spectra,24540\npsms_T2_A1_comet,7765\npsms_T2_B1_comet,7730\npsms_T7A_1_comet,2689\npsms_T7B_1_comet,4316\ntotal_psms_comet,22500\npsms_T2_A1_msgf,7866\npsms_T2_B1_msgf,7805\npsms_T7A_1_msgf,2736\npsms_T7B_1_msgf,4440\ntotal_psms_msgf,22847\ncomet_unique_peptides,9074\ncomet_unique_proteins,16373\nmsgf_unique_peptides,9218\nmsgf_unique_proteins,16375\npeptides_T2_A1,5177\npeptides_T2_B1,5546\npeptides_T7A_1,2389\npeptides_T7B_1,3610\ntotal_unique_peptides,9873\ntotal_unique_proteins,18236\ndatabase_protein_count,104908\nprotein_identification_rate_pct,17.38\nengine_shared_peptides,8419\nengine_overlap_pct,85.27\ncondition1_peptides,7586\ncondition2_peptides,4506\nshared_condition_peptides,2219\ncondition_overlap_pct,22.48\ntarget_sequences,104908\ndecoy_sequences,104908\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dda-lfq-proteomics/results.tar.gz"
         }
       ]
     }
