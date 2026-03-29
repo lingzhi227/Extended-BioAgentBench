@@ -1,0 +1,18 @@
+name: clinical-wgs-interpretation
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastp
+  - bwa-mem2
+  - samtools
+  - picard
+  - gatk4
+  - delly
+  - mosdepth
+  - bcftools
+  - snpsift
+  - bedtools
+  - multiqc
+  - pandas
+  - python=3.11

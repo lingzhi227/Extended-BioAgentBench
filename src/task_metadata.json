@@ -1632,5 +1632,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "clinical-wgs-interpretation",
+    "name": "Clinical WGS Interpretation: Full Clinical Genome Analysis",
+    "description": "Clinical whole-genome sequencing interpretation requires a comprehensive pipeline that integrates multiple analysis tracks: single nucleotide variant and indel detection, structural variant discovery, coverage assessment, and multi-source clinical annotation. This task processes paired-end sequencing data from a human sample (chromosome 7 subset) through the full clinical interpretation pipeline, including quality control, alignment, duplicate marking, base quality recalibration, parallel variant calling tracks, variant filtration, clinical database annotation, gene panel filtering, and generation of a comprehensive clinical report with coverage adequacy assessment.",
+    "task_prompt": "Perform clinical whole-genome sequencing interpretation from paired-end sequencing data. The data/ directory contains FASTQ files (sample_R1.fastq.gz, sample_R2.fastq.gz). The reference/ directory contains the genome (genome.fa), gene annotation (genes.gtf), known variant sites (dbsnp.vcf.gz), a clinical significance database (clinvar.vcf.gz), gene regions (gene_regions.bed), and a clinical gene panel (gene_panel.bed). Quality-filter reads, align with proper read groups, sort, mark duplicates, and recalibrate base qualities. Then run three parallel analysis tracks: (1) call small variants (SNPs and indels), normalize, and independently filter SNPs and indels with quality thresholds, (2) detect structural variants, and (3) compute genome-wide coverage statistics. Merge all variant calls, annotate against the clinical database and known variant sites, compute variant summary statistics (transition/transversion ratio, heterozygous/homozygous counts), filter to a clinical gene panel, and assess coverage adequacy by counting low-coverage regions. The output should be a CSV file with columns: 'metric','value'.\n<example>\nmetric,value\nraw_reads,1000000\nclean_reads,983862\nq30_rate,94.39\nmapped_reads,171808\nmapping_rate,17.38\nduplication_rate,0.28\nmean_coverage,0.23\nsnp_count,311\nindel_count,103\ntotal_snv,414\nsv_count,9\nti_tv_ratio,2.02\nhet_count,24\nhom_count,390\nhet_hom_ratio,0.06\nclinvar_annotated,0\ngene_panel_variants,1\nlow_coverage_regions,162832\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/clinical-wgs-interpretation/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/clinical-wgs-interpretation/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/clinical-wgs-interpretation/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
