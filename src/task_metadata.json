@@ -1144,5 +1144,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "viral-phylodynamics",
+    "name": "Viral Phylodynamics (Molecular Clock Analysis)",
+    "description": "Molecular clock analysis estimates evolutionary rates, divergence times, and epidemic dynamics from time-stamped viral sequences using Bayesian and maximum-likelihood methods. This task involves multiple sequence alignment, phylogenetic model selection, temporal signal assessment, molecular clock estimation, geographic migration reconstruction (phylogeography), effective population size inference (skyline analysis), and ancestral sequence reconstruction. Key challenges include handling ambiguous sampling dates, detecting recombination, choosing appropriate clock models (strict vs relaxed), and correctly rooting the phylogeny for time calibration.",
+    "task_prompt": "Perform a molecular clock and phylodynamic analysis on viral sequences. Sequences are in data/sequences.fasta and sampling metadata (dates, locations) in data/metadata.tsv. A reference genome is in reference/reference.fasta. Align the sequences, select the best-fit substitution model, build a maximum-likelihood phylogeny with bootstrap support, perform temporal signal assessment, estimate evolutionary rates and the time to most recent common ancestor (TMRCA), reconstruct geographic migration history, estimate effective population size over time (skyline), reconstruct ancestral sequences, identify geographic transmission clusters, and export the results for interactive visualization. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\nnum_sequences,34\nalignment_length,10611\ngap_fraction,0.0218\nbest_model,TN+F+I\nmean_bootstrap,83.8\nhigh_support_nodes,23\ntotal_internal_nodes,31\nclock_rate,1.162e-03\nclock_r_squared,0.80\nnum_dated_tips,34\ntmrca,2012.38\nmugration_model,fitted\nnum_migration_countries,15\nskyline_intervals,10\nmax_effective_pop_size,359.7\nmin_effective_pop_size,46.7\nancestral_sequences,61\nnum_geographic_clusters,7\nlargest_cluster_size,5\nvisualization_export,success\ndate_range_start,2013.87\ndate_range_end,2016.96\nnum_countries,15\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/viral-phylodynamics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/viral-phylodynamics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/viral-phylodynamics/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
