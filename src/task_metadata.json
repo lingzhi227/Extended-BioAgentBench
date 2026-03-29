@@ -1045,5 +1045,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "hicar-chromatin",
+    "name": "HiCAR Chromatin Interaction: Proximity Ligation and Accessibility",
+    "description": "This task analyzes HiCAR (Hi-C with Accessibility Readout) data, a multi-omic assay that simultaneously captures chromatin interactions and chromatin accessibility from the same sequencing library. Four paired-end samples (2 KD replicates, 2 WT replicates) targeting chromosome 22 are provided. In HiCAR, R1 reads represent proximity ligation junctions (like Hi-C) while R2 reads capture local accessibility (like ATAC-seq). A chr22 reference genome and gene annotations are provided in reference/. The goal is to process both read types, extract proximity ligation pairs and accessibility signals, build contact matrices, call accessibility peaks, and report interaction and accessibility statistics.",
+    "task_prompt": "Analyze HiCAR multi-omic chromatin data from four paired-end samples (two conditions: KD and WT, two replicates each). In HiCAR, R1 captures proximity ligation contacts and R2 captures chromatin accessibility. A chr22 reference genome and annotations are in reference/. Trim adapters, align reads, parse proximity ligation pairs from the alignments, call accessibility peaks from the R2 reads (convert to single-end format), build contact matrices at 10kb resolution, and compute statistics for both contact and accessibility data. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntotal_samples,4\nconditions,2\ntotal_read_pairs,255490\ntrimmed_read_pairs,255490\ntotal_valid_pairs,187129\ncis_contacts,187129\ntrans_contacts,0\ncis_contact_pct,100.0\ntotal_accessibility_peaks,2135\nkd_rep1_peaks,289\nkd_rep2_peaks,93\nwt_rep1_peaks,824\nwt_rep2_peaks,929\ncontact_matrices_created,4\nmatrix_resolution,10000</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/hicar-chromatin/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/hicar-chromatin/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/hicar-chromatin/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

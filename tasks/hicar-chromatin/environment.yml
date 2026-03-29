@@ -1,0 +1,17 @@
+name: hicar-chromatin
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.10
+  - pandas
+  - numpy
+  - scipy
+  - bwa>=0.7
+  - cutadapt>=4.0
+  - pairtools>=1.0
+  - cooler>=0.9
+  - macs3>=3.0
+  - samtools>=1.17
+  - bedtools>=2.30
