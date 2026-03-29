@@ -1378,31 +1378,5 @@
         }
       ]
     }
-  },
-  {
-    "task_id": "circrna-detection",
-    "name": "Circular RNA Detection and Quantification",
-    "description": "This task detects circular RNAs from paired-end RNA-seq data by identifying back-splice junction reads. A chr22 reference genome, gene annotation, and refFlat annotation are provided.",
-    "task_prompt": "Detect circular RNAs from RNA-seq data by identifying chimeric back-splice junction reads, annotate them against known gene structures, and quantify linear gene expression for context. Reads in data/, reference genome and annotations in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,194746\nuniquely_mapped,2505\nmapping_pct,1.29\nchimeric_reads,994\nback_splice_junctions_raw,0\ncircular_rnas_annotated,0\ncircular_rnas_filtered,0\nhost_genes,0\nlinear_genes_expressed,27</example>",
-    "download_urls": {
-      "data": [
-        {
-          "filename": "data.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/circrna-detection/data.tar.gz"
-        }
-      ],
-      "reference_data": [
-        {
-          "filename": "reference.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/circrna-detection/reference.tar.gz"
-        }
-      ],
-      "results": [
-        {
-          "filename": "results.tar.gz",
-          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/circrna-detection/results.tar.gz"
-        }
-      ]
-    }
   }
 ]
