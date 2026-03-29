@@ -1170,5 +1170,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "edna-metabarcoding",
+    "name": "eDNA Aquatic Metabarcoding Biodiversity Assessment",
+    "description": "Environmental DNA (eDNA) metabarcoding enables non-invasive biodiversity monitoring of aquatic ecosystems by analyzing DNA shed by organisms into their environment. This task involves processing amplicon sequencing data targeting the 12S mitochondrial rRNA gene of fish. The pipeline requires primer removal, read merging, quality filtering, sequence dereplication, multiple clustering approaches (OTU and ASV-based), chimera detection, multi-method taxonomic assignment with consensus resolution, and community ecology analysis including alpha diversity, beta diversity, and detection probability estimation.",
+    "task_prompt": "Analyze environmental DNA (eDNA) metabarcoding data from aquatic samples to assess fish biodiversity. Six paired-end amplicon sequencing samples from coral reef water samples are provided in data/. A 12S rRNA reference database for fish species is in reference/. The amplicon data was generated with standard fish eDNA primers (MiFish-U). Remove primers, merge paired reads, quality-filter, dereplicate, cluster sequences using multiple methods (OTU clustering at 97%, network-based clustering, and denoising), remove chimeric sequences, assign taxonomy using multiple database search approaches with lowest common ancestor consensus, compute community ecology metrics (alpha diversity, beta diversity, species detection rates across samples), and generate a comprehensive biodiversity report.\nThe output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\ntotal_raw_reads,1407956\ntotal_merged_reads,699972\nmerge_rate,99.43\nunique_sequences,9199\nclusters_otu97,309\nclusters_swarm,371\nclusters_denoised,389\nclean_sequence_count,385\nchimera_count,4\nassigned_sequences,299\nunassigned_sequences,39\nspecies_count,118\ngenus_count,126\nfamily_count,54\norder_count,32\nmean_shannon_diversity,3.7519\nmin_species_richness,114\nmax_species_richness,187\nmean_beta_diversity,0.6965\nmin_beta_diversity,0.533\nmax_beta_diversity,0.8741\nmean_detection_rate,0.3418\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/edna-metabarcoding/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/edna-metabarcoding/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/edna-metabarcoding/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
