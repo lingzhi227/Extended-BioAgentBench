@@ -795,5 +795,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "taxonomic-profiling",
+    "name": "Multi-classifier Taxonomic Profiling of Metagenomic Reads",
+    "description": "This task performs taxonomic classification of metagenomic shotgun sequencing data using multiple independent classification approaches. Two paired-end Illumina samples from an ancient metagenome study (Maixner et al. 2021) are provided. Pre-built classification databases for three distinct algorithmic approaches (k-mer matching, Burrows-Wheeler transform alignment, and protein-level translation) are provided in the reference/ directory. The goal is to run all three classifiers independently, merge their results to identify consensus taxa, and compute diversity metrics.",
+    "task_prompt": "Classify metagenomic reads from two paired-end samples using three independent taxonomic classifiers provided in reference/. Each subdirectory in reference/ contains a pre-built database for a different classification approach. Quality-filter the reads first, then run each classifier independently on both samples, merge the per-sample results to identify taxa detected by multiple classifiers (consensus), and calculate alpha diversity metrics from the consensus profiles. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntotal_samples,2\ntotal_input_reads,2339208\ntotal_qc_reads,1882572\nclassifiers_used,3\nclassified_reads_classifier1,216\nclassified_reads_classifier2,893\nclassified_reads_classifier3,0\nunique_species_classifier1,2\nunique_species_classifier2,4\nunique_species_classifier3,0\ntotal_unique_taxa,5\nconsensus_taxa,2\ntop_taxon,Homo sapiens\ntop_taxon_abundance,33.35\nmean_shannon,0.3164\nmean_simpson,0.1974\nmean_richness,4.5</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/taxonomic-profiling/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/taxonomic-profiling/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/taxonomic-profiling/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

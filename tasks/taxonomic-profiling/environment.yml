@@ -1,0 +1,13 @@
+name: taxonomic-profiling
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.10
+  - pandas
+  - fastp>=0.23
+  - kraken2>=2.1
+  - bracken>=2.8
+  - centrifuge>=1.0
+  - kaiju>=1.9
