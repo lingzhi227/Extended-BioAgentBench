@@ -743,5 +743,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "rna-fusion",
+    "name": "RNA Fusion Detection from RNA-seq",
+    "description": "This task analyzes paired-end RNA-seq data to detect gene fusion events and quantify gene expression. A chr22 reference genome and gene annotation are provided.",
+    "task_prompt": "Detect gene fusions from RNA-seq data using chimeric read analysis, and quantify gene expression and transcript assembly. Reference genome and annotation in reference/. The output should be a CSV file with the following columns: 'metric','value'.\n<example>metric,value\ntotal_reads,185012\nuniquely_mapped,1986\nmapping_pct,1.07\nchimeric_reads,745\nsplice_junctions,166\nfusions_detected,0\nhigh_confidence_fusions,0\nmedium_confidence_fusions,0\ngenes_expressed,26\nassembled_transcripts,20588</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/rna-fusion/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/rna-fusion/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/rna-fusion/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
