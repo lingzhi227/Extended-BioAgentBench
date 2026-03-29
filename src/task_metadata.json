@@ -1274,5 +1274,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "hic-3d-conformation",
+    "name": "Hi-C 3D Genome Conformation Analysis",
+    "description": "Analyze Hi-C chromatin interaction data to map 3D genome organization. Hi-C captures chromosome conformation by proximity ligation of cross-linked chromatin, producing paired-end reads that represent physical contacts between distant genomic loci. The analysis involves quality-filtering paired reads, aligning to a reference genome, extracting valid contact pairs, building interaction matrices at fixed resolution, and calling structural features including chromatin compartments (A/B), topological domain boundaries, and significant loop interactions. The input is paired-end sequencing reads from a yeast Hi-C experiment with a matching reference genome.",
+    "task_prompt": "Analyze Hi-C paired-end reads to characterize 3D genome organization. The input reads are in data/ and the reference genome is in reference/. Process the reads through quality trimming, alignment in Hi-C mode, contact pair extraction, deduplication, and contact matrix generation. From the balanced contact matrix, call chromatin compartments (A/B type), identify topological domain boundaries at multiple window sizes, detect chromatin loops, and identify statistically significant chromatin interactions. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>\nmetric,value\ntotal_read_pairs,500000\nreads_after_trim,488672\ntrim_rate_pct,2.27\nmapped_pairs,381220\nunique_pairs,381220\ncis_contacts,323321\ntrans_contacts,57899\ncis_ratio,0.8481\ncis_gt_1kb,24336\ncis_gt_10kb,8259\nduplicate_pairs,5036\ncompartment_switches,1024\ncompartment_a_bins,1080\ncompartment_b_bins,1030\nboundaries_25kb,284\nboundaries_50kb,166\ndetected_loops,0\nsignificant_interactions,30\nresolution_bp,5000\n</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/hic-3d-conformation/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/hic-3d-conformation/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/hic-3d-conformation/results.tar.gz"
+        }
+      ]
+    }
   }
 ]

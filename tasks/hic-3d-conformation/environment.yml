@@ -1,0 +1,20 @@
+name: hic-3d-conformation
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - fastp
+  - bwa-mem2
+  - samtools
+  - pairtools
+  - cooler
+  - cooltools
+  - chromosight
+  - fithic
+  - bedtools
+  - multiqc
+  - python>=3.9
+  - pandas
+  - numpy
+  - scipy
