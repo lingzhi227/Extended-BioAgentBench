@@ -1,12 +1,7 @@
-FROM condaforge/mambaforge:latest
-
-COPY environment.yml /tmp/environment.yml
-RUN mamba env create -f /tmp/environment.yml && mamba clean -afy
-
-ENV PATH /opt/conda/envs/dda-lfq-proteomics/bin:$PATH
-SHELL ["conda", "run", "-n", "dda-lfq-proteomics", "/bin/bash", "-c"]
-
-WORKDIR /workspace
-COPY . /workspace/
-
-CMD ["bash", "run_script.sh"]
+FROM condaforge/mambaforge:24.9.2-0
+WORKDIR /app
+COPY run_script.sh /app/
+COPY environment.yml /app/
+RUN mamba init bash && . ~/.bashrc && mamba env create -f environment.yml && chmod +x /app/run_script.sh
+SHELL ["/bin/bash", "--login", "-c"]
+CMD ["/app/run_script.sh"]
