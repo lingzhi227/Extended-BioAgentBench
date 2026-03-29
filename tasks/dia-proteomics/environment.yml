@@ -1,0 +1,10 @@
+name: dia-proteomics
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - openms>=3.0
+  - pyprophet
+  - msproteomicstools
+  - bioconductor-msstats

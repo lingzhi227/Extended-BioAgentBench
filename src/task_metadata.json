@@ -1118,5 +1118,31 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "dia-proteomics",
+    "name": "DIA Proteomics Quantification: Malignant vs Benign Protein Expression",
+    "description": "This task analyzes data-independent acquisition (DIA) proteomics data from a clinical study comparing malignant and benign samples. Four DIA mzML files (2 conditions x 2 replicates) are provided along with a pre-built spectral library in PQP format, iRT calibration peptides, and a sample annotation sheet. The goal is to quantify proteins across conditions: search each run against the spectral library, control false discovery rate, align quantified features across runs, and test for differential protein abundance between conditions. Data from nf-core/diaproteomics test dataset (PRIDE PXD003179).",
+    "task_prompt": "Quantify proteins from DIA (data-independent acquisition) mass spectrometry data. Four mzML files are provided in data/ (2 conditions x 2 replicates: Malignant vs Benign). A spectral library and iRT calibration peptides are in reference/ along with a sample sheet mapping runs to conditions. Analyze each run against the spectral library, score and filter peptide identifications, align features across runs, and perform differential protein quantification between conditions. The output should be a CSV file with columns: 'metric','value'.\n<example>metric,value\ndia_runs_processed,4\nfeatures_per_run,457\ntotal_features,1828\npeptides_identified,108\ntarget_proteins,46\ndecoy_proteins,38\naligned_features,12\ndifferentially_expressed_proteins,0\nfdr_threshold,0.01\nconditions,Malignant;Benign</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dia-proteomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dia-proteomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/dia-proteomics/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
