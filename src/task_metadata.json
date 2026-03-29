@@ -915,5 +915,57 @@
         }
       ]
     }
+  },
+  {
+    "task_id": "clinical-metaproteomics",
+    "name": "Clinical Metaproteomics: Multi-Engine Marine Microbiome Analysis",
+    "description": "This task analyzes metaproteomics data from a marine microbiome sample collected at the Bering Strait chlorophyll maximum layer. Three replicate mass spectrometry runs (MGF format) are provided along with a protein sequence database containing trimmed metapeptides and common contaminants. A Gene Ontology annotation file is also included. The goal is to identify peptides and proteins using multiple search engine approaches, control false discovery rate, merge results across engines, perform functional annotation using GO terms, and summarize identifications across replicates.",
+    "task_prompt": "Analyze metaproteomics data from three replicate mass spectrometry runs of a marine microbiome sample. The data/ directory contains three MGF spectrum files (sample1.mgf, sample2.mgf, sample3.mgf). The reference/ directory contains a protein sequence database (proteins.fasta with metapeptides and contaminants) and Gene Ontology annotations (go_terms.tsv). Create a target-decoy database for false discovery estimation. Search spectra against the database using at least two independent search engines, merge their results, estimate and filter at 1% FDR, identify unique peptides and proteins, map GO functional annotations, and compare identifications across the three replicates. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntotal_spectra,1813\ntotal_psms_fdr1pct,2996\nunique_peptides,315\nunique_proteins,287\nsample1_psms,1003\nsample2_psms,937\nsample3_psms,1056\nsearch_engines_used,2\nfdr_threshold,0.01\ngo_terms_total,530\ngo_biological_process,286\ngo_molecular_function,181\ngo_cellular_component,63\nproteins_per_sample_avg,221</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/clinical-metaproteomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/clinical-metaproteomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/clinical-metaproteomics/results.tar.gz"
+        }
+      ]
+    }
+  },
+  {
+    "task_id": "mhc-immunopeptidomics",
+    "name": "MHC Immunopeptidomics: Peptide Identification and Quantification",
+    "description": "This task analyzes mass spectrometry immunopeptidomics data to identify and quantify MHC class I-presented peptides from HepG2 cell line replicates. Two mzML files containing tandem mass spectrometry data are provided along with a human protein reference database in reference/. MHC-presented peptides have a characteristic length distribution of 8-12 amino acids with no enzymatic cleavage specificity, requiring specialized search strategies. The goal is to process raw spectra, search against the protein database without enzyme specificity, statistically validate identifications, align retention times across runs, and quantify peptide features.",
+    "task_prompt": "Identify and quantify MHC-presented peptides from two replicate mass spectrometry experiments. Two mzML spectral files are in data/ and a human protein reference database is in reference/. Process the spectra (centroid if needed), search against the protein database using unspecific cleavage to find peptides of 8-12 amino acids, add decoy sequences for statistical validation, rescore peptide-spectrum matches, filter at 5% FDR, align identifications across runs, and quantify peptide features. The output should be a CSV file at results/report.csv with columns: 'metric','value'.\n<example>metric,value\ntotal_samples,2\ntotal_spectra,5200\ntotal_psms_searched,2277\ntotal_psms_filtered,887\nunique_peptides_raw,1292\nunique_peptides_filtered,288\nmodal_peptide_length,9\npct_peptides_8_12mer,83.0\ntotal_quantified_features,51\nsample1_spectra,2600\nsample1_psms,441\nsample2_spectra,2600\nsample2_psms,446</example>",
+    "download_urls": {
+      "data": [
+        {
+          "filename": "data.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mhc-immunopeptidomics/data.tar.gz"
+        }
+      ],
+      "reference_data": [
+        {
+          "filename": "reference.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mhc-immunopeptidomics/reference.tar.gz"
+        }
+      ],
+      "results": [
+        {
+          "filename": "results.tar.gz",
+          "url": "https://huggingface.co/datasets/lingzhi227/Extended-BioAgentBench/resolve/main/tasks/mhc-immunopeptidomics/results.tar.gz"
+        }
+      ]
+    }
   }
 ]
